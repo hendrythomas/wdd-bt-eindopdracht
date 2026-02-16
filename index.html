@@ -9,7 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <h1>Erfbelasting!!!</h1>
+    <div class="top-bar">
+      <h2>Erfbelasting!!!</h2>
+    </div>
     <form class="content">
       <ol>
         <li>
@@ -20,7 +22,7 @@
                 <dl>
                   <dt>Voorletter(s), tussenvoegsel(s) en achternaam</dt>
                   <dd>
-                    <input aria-label="Voorletter(s)" type="text" name="fname">
+                    <input aria-label="Voorletter(s)" type="text" name="initials">
                     <input aria-label="Tussenvoegsel(s)" type="text" name="lname-a">
                     <input aria-label="Achternaam" type="text" name="lname-b">
                   </dd>
@@ -133,6 +135,129 @@
                       Ja. Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.
                     </label>
                   </dd>
+                  <dt>
+                    <label>
+                      Protocolnummer notaris:
+                      <input type="number" name="idk">
+                    </label>
+                  </dt>
+                  <dt>Voorletter(s), tussenvoegsel(s) en achternaam notaris</dt>
+                  <dd>
+                    <input aria-label="Voorletter(s)" type="text" name="idk">
+                    <input aria-label="Tussenvoegsel(s)" type="text" name="idk">
+                    <input aria-label="Achternaam" type="text" name="idk">
+                  </dd>
+                  <dt>
+                    <label>
+                      Vestigingsplaats notaris:
+                      <input type="text" name="idk">
+                    </label>
+                  </dt>
+                  <dt>
+                    <label>
+                      Datum van het testament of van de laatste wijziging:
+                      <input type="date" name="idk">
+                    </label>
+                  </dt>
+                </dl>
+              </li>
+            </ol>
+          </fieldset>
+          <fieldset>
+            <legend>Gegevens gemachtigde</legend>
+            <ol class="lettered">
+              <li>
+                <fieldset>
+                  <legend>
+                    Vul 1 van de 3 in: het bsn of RSIN van de gemachtigde, het beconnummer van de adviseur of het protocolnummer van de notaris.
+                  </legend>
+                  <dl>
+                    <dt>
+                      <label>
+                        Bsn/RSIN gemachtigde:
+                        <input type="number" name="idk">
+                      </label>
+                    </dt>
+                    <dt>
+                      <label>
+                        Beconnummer adviseur:
+                        <input type="number" name="idk">
+                      </label>
+                    </dt>
+                    <dt>
+                      <label>
+                        Protocolnummer notaris:
+                        <input type="number" name="idk">
+                      </label>
+                    </dt>
+                  </dl>
+                </fieldset>
+              </li>
+              <li>
+                <dl>
+                  <dt>Voorletter(s), tussenvoegsel(s) en achternaam gemachtigde</dt>
+                  <dd>
+                    <input aria-label="Voorletter(s)" type="text" name="idk">
+                    <input aria-label="Tussenvoegsel(s)" type="text" name="idk">
+                    <input aria-label="Achternaam" type="text" name="idk">
+                  </dd>
+                  <dt>
+                    <label>
+                      Naam instelling (bijvoorbeeld een notariskantoor:
+                      <input type="text" name="idk">
+                    </label>
+                  </dt>
+                  <dt>
+                    <fieldset>
+                      <legend>Adres in Nederland</legend>
+                      <dl>
+                        <dt>Straat, huisnummer en toevoeging</dt>
+                        <dd>
+                          <input aria-label="Straat" type="text" name="idk">
+                          <input aria-label="Huisnummer" type="number" name="idk">
+                          <input aria-label="Toevoeging" type="text" name="idk">
+                        </dd>
+                        <dt>Postcode en woonplaats</dt>
+                        <dd>
+                          <input aria-label="Postcode" type="text" name="idk">
+                          <input aria-label="Woonplaats" type="text" name="idk">
+                        </dd>
+                      </dl>
+                    </fieldset>
+                  </dt>
+                  <dt>
+                    <fieldset>
+                      <legend>Adres in het buitenland</legend>
+                      <dl>
+                        <dt>Straat en huisnummer</dt>
+                        <input aria-label="Straat" type="text" name="idk">
+                        <input aria-label="Huisnummer" type="number" name="idk">
+                      </dl>
+                      <dt>Postcode en plaats</dt>
+                      <dd>
+                        <input aria-label="Postcode" type="text" name="idk">
+                        <input aria-label="Plaats" type="text" name="idk">
+                      </dd>
+                      <dt>
+                        <label>
+                          Landcode:
+                          <input type="number" name="idk">
+                        </label>
+                        <dt>
+                          <label>
+                            Telefoonnummer:
+                            <input type="number" name="idk">
+                          </label>
+                        </dt>
+                        <dt>
+                          <label>
+                            E-mailadres:
+                            <input type="email" name="idk">
+                          </label>
+                        </dt>
+                      </dt>
+                    </fieldset>
+                  </dt>
                 </dl>
               </li>
             </ol>

@@ -1,13 +1,148 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Thomas Hendry</title>
+    <title>Aangifte erfbelasting</title>
     <link rel="stylesheet" href="./styles.css">
-    <link rel="icon" href="./assets/favicon.ico">
+    <!-- <link rel="icon" href="./assets/favicon.ico"> -->
     <script src="./scripts.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
+    <h1>Erfbelasting!!!</h1>
+    <form class="content">
+      <ol>
+        <li>
+          <fieldset>
+            <legend>Gegevens van de overledene</legend>
+            <ol class="lettered-list">
+              <li>
+                <dl>
+                  <dt>Voorletter(s), tussenvoegsel(s) en achternaam</dt>
+                  <dd>
+                    <input aria-label="Voorletter(s)" type="text" name="fname">
+                    <input aria-label="Tussenvoegsel(s)" type="text" name="lname-a">
+                    <input aria-label="Achternaam" type="text" name="lname-b">
+                  </dd>
+                  <dt>
+                    <label>
+                      Bsn overledene:
+                      <input type="number" name="bsn">
+                    </label>
+                  </dt>
+                  <dt>
+                    <label>
+                      Overlijdensdatum:
+                      <input type="date" name="death-date">
+                    </label>
+                  </dt>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</dt>
+                  <dd>
+                    <label>
+                      <input type="radio" name="had-partner">
+                      Nee. Ga verder met vraag 1c.
+                    </label>
+                    <label>
+                      <input type="radio" name="had-partner">
+                      Ja
+                    </label>
+                  </dd>
+                  <dt>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?</dt>
+                  <dd>
+                    <label>
+                      <input type="radio" name="idk">
+                      Nee. Ga verder met vraag 1c.
+                    </label>
+                    <label>
+                      <input type="radio" name="idk">
+                      Ja. Stuur een kopie van de akte mee met de aangifte.
+                    </label>
+                  </dd>
+                  <dt>Hadden de overledene en diens partner een finaal verrekenbeding?</dt>
+                  <dd>
+                    <label>
+                      <input type="radio" name="idk">
+                      Nee
+                    </label>
+                    <label>
+                      <input type="radio" name="idk">
+                      Ja
+                    </label>
+                  </dd>
+                  <dt>
+                    <label>Datum huwelijkse of partnerschapsvoorwaarden:</label>
+                    <input type="date" name="idk">
+                  </dt>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>Had de overledene kinderen?</dt>
+                  <dd>
+                    <label>
+                      <input type="radio" name="idk">
+                      Nee. Ga verder met vraag 1d.
+                    </label>
+                    <label>
+                      <input type="radio" name="idk">
+                      Ja
+                    </label>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</dt>
+                  <dd>
+                    <label>
+                      <input type="radio" name="idk">
+                      Nee. Ga verder met vraag 1d.
+                    </label>
+                    <label>
+                      <input type="radio" name="idk">
+                      Ja
+                    </label>
+                  </dd>
+                </dl>
+                <dl>
+                  <dt>Had dit overleden kind zelf kinderen?</dt>
+                  <dd>
+                    <label>
+                      <input type="radio" name="idk">
+                      Nee
+                    </label>
+                    <label>
+                      <input type="radio" name="idk">
+                      Ja
+                    </label>
+                  </dd>
+                </dl>
+              </li>
+              <li>
+                <dl>
+                  <dt>Had de overledene een testament?</dt>
+                  <dd>
+                    <label>
+                      <input type="radio" name="idk">
+                      Nee. Ga verder met vraag 2.
+                    </label>
+                    <label>
+                      <input type="radio" name="idk">
+                      Ja. Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.
+                    </label>
+                  </dd>
+                </dl>
+              </li>
+            </ol>
+          </fieldset>
+        </li>
+      </ol>
+      <div>
+        <span>Opslaan</s>
+        <input type="submit" value="Verzenden">
+      </div>
+    </form>
   </body>
 </html>

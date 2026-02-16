@@ -1,0 +1,12 @@
+ol.lettered {
+  list-style-type: lower-alpha;
+}
+
+ol > *,
+dl > * {
+  margin-top: 16px;
+}
+
+label:has(> input[type="radio"]) {
+  display: block;
+}

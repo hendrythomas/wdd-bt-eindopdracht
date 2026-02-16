@@ -16,36 +16,35 @@ body {
   background-color: var(--c);
   padding: 15px;
 }
+
 .top-bar > * {
   color: var(--c-text);
   margin: 0;
 }
 
+form {
+  width: clamp(50%, 800px, 100%);
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+.multi-label {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+form li > *,
+.multi-label {
+  padding-top:    8px;
+  padding-bottom: 8px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
 ol.lettered {
   list-style-type: lower-alpha;
-}
-
-ol > *,
-dl > * {
-  margin-top: 16px;
-}
-
-label:has(> input[type="radio"]),
-:not(label) > input[type="radio"] {
-  display: block;
-}
-
-@media only screen and (min-width: 800px) {
-  dl {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  dt {
-    grid-column-start: 1;
-  }
-  dd {
-    grid-column-start: 2;
-  }
 }
 
 

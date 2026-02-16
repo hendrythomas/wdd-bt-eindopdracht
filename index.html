@@ -12,253 +12,218 @@
     <div class="top-bar">
       <h2>Erfbelasting!!!</h2>
     </div>
-    <form class="content">
+    <form>
       <ol>
         <li>
           <fieldset>
             <legend>Gegevens van de overledene</legend>
             <ol class="lettered">
               <li>
-                <dl>
-                  <dt>Voorletter(s), tussenvoegsel(s) en achternaam</dt>
-                  <dd>
-                    <input aria-label="Voorletter(s)" type="text" name="initials">
-                    <input aria-label="Tussenvoegsel(s)" type="text" name="lname-a">
-                    <input aria-label="Achternaam" type="text" name="lname-b">
-                  </dd>
-                  <dt>
-                    <label>
-                      Bsn overledene:
-                      <input type="number" name="bsn">
-                    </label>
-                  </dt>
-                  <dt>
-                    <label>
-                      Overlijdensdatum:
-                      <input type="date" name="death-date">
-                    </label>
-                  </dt>
-                </dl>
+                <label>
+                  Voorletter(s):
+                  <input type="text" name="voorletters">
+                </label>
+                <label>
+                  Tussenvoegsel(s):
+                  <input type="text" name="tussenvoegsels">
+                </label>
+                <label>
+                  Achternaam:
+                  <input type="text" name="achternaam">
+                </label>
+                <label>
+                  Bsn overledene:
+                  <input type="number" name="bsn">
+                </label>
+                <label>
+                  Overlijdensdatum:
+                  <input type="date" name="death-date">
+                </label>
               </li>
               <li>
-                <dl>
-                  <dt>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</dt>
-                  <dd>
-                    <label>
-                      <input type="radio" name="had-partner">
-                      Nee. Ga verder met vraag 1c.
-                    </label>
-                    <label>
-                      <input type="radio" name="had-partner">
-                      Ja
-                    </label>
-                  </dd>
-                  <dt>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?</dt>
-                  <dd>
-                    <label>
-                      <input type="radio" name="idk">
-                      Nee. Ga verder met vraag 1c.
-                    </label>
-                    <label>
-                      <input type="radio" name="idk">
-                      Ja. Stuur een kopie van de akte mee met de aangifte.
-                    </label>
-                  </dd>
-                  <dt>Hadden de overledene en diens partner een finaal verrekenbeding?</dt>
-                  <dd>
-                    <label>
-                      <input type="radio" name="idk">
-                      Nee
-                    </label>
-                    <label>
-                      <input type="radio" name="idk">
-                      Ja
-                    </label>
-                  </dd>
-                  <dt>
-                    <label>Datum huwelijkse of partnerschapsvoorwaarden:</label>
-                    <input type="date" name="idk">
-                  </dt>
-                </dl>
-              </li>
-              <li>
-                <dl>
-                  <dt>Had de overledene kinderen?</dt>
-                  <dd>
-                    <label>
-                      <input type="radio" name="idk">
-                      Nee. Ga verder met vraag 1d.
-                    </label>
-                    <label>
-                      <input type="radio" name="idk">
-                      Ja
-                    </label>
-                  </dd>
-                </dl>
-                <dl>
-                  <dt>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</dt>
-                  <dd>
-                    <label>
-                      <input type="radio" name="idk">
-                      Nee. Ga verder met vraag 1d.
-                    </label>
-                    <label>
-                      <input type="radio" name="idk">
-                      Ja
-                    </label>
-                  </dd>
-                </dl>
-                <dl>
-                  <dt>Had dit overleden kind zelf kinderen?</dt>
-                  <dd>
-                    <label>
-                      <input type="radio" name="idk">
-                      Nee
-                    </label>
-                    <label>
-                      <input type="radio" name="idk">
-                      Ja
-                    </label>
-                  </dd>
-                </dl>
-              </li>
-              <li>
-                <dl>
-                  <dt>Had de overledene een testament?</dt>
-                  <dd>
-                    <label>
-                      <input type="radio" name="idk">
-                      Nee. Ga verder met vraag 2.
-                    </label>
-                    <label>
-                      <input type="radio" name="idk">
-                      Ja. Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.
-                    </label>
-                  </dd>
-                  <dt>
-                    <label>
-                      Protocolnummer notaris:
-                      <input type="number" name="idk">
-                    </label>
-                  </dt>
-                  <dt>Voorletter(s), tussenvoegsel(s) en achternaam notaris</dt>
-                  <dd>
-                    <input aria-label="Voorletter(s)" type="text" name="idk">
-                    <input aria-label="Tussenvoegsel(s)" type="text" name="idk">
-                    <input aria-label="Achternaam" type="text" name="idk">
-                  </dd>
-                  <dt>
-                    <label>
-                      Vestigingsplaats notaris:
-                      <input type="text" name="idk">
-                    </label>
-                  </dt>
-                  <dt>
-                    <label>
-                      Datum van het testament of van de laatste wijziging:
-                      <input type="date" name="idk">
-                    </label>
-                  </dt>
-                </dl>
-              </li>
+              <fieldset class="multi-label">
+                <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+                <label>
+                  <input type="radio" name="had-partner">
+                  Nee
+                </label>
+                <label>
+                  <input type="radio" name="had-partner">
+                  Ja
+                </label>
+              </fieldset>
+              <fieldset class="multi-label">
+                <legend>
+                  Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?
+                </legend>
+                <label>
+                  <input type="radio" name="idk">
+                  Nee
+                </label>
+                <label>
+                  <input type="radio" name="idk">
+                  Ja
+                </label>
+              </fieldset>
+              <fieldset class="multi-label">
+                <legend>
+                  Hadden de overledene en diens partner een finaal verrekenbeding?
+                </legend>
+                <label>
+                  <input type="radio" name="idk">
+                  Nee
+                </label>
+                <label>
+                  <input type="radio" name="idk">
+                  Ja
+                </label>
+              </fieldset class="multi-label">
+              <label>
+                Datum huwelijkse of partnerschapsvoorwaarden:
+                <input type="date" name="idk">
+              </label>
+              <fieldset class="multi-label">
+                <legend>Had de overledene kinderen?</legend>
+                <label>
+                  <input type="radio" name="idk">
+                  Nee
+                </label>
+                <label>
+                  <input type="radio" name="idk">
+                  Ja
+                </label>
+              </fieldset>
+              <fieldset class="multi-label">
+                <legend>
+                  Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
+                </legend>
+                <label>
+                  <input type="radio" name="idk">
+                  Nee
+                </label>
+                <label>
+                  <input type="radio" name="idk">
+                  Ja
+                </label>
+              </fieldset>
+              <fieldset class="multi-label">
+                <legend>Had dit overleden kind zelf kinderen?</legend>
+                <label>
+                  <input type="radio" name="idk">
+                  Nee
+                </label>
+                <label>
+                  <input type="radio" name="idk">
+                  Ja
+                </label>
+              </fieldset>
+              <fieldset class="multi-label">
+                <legend>Had de overledene een testament?</legend>
+                <label>
+                  <input type="radio" name="idk">
+                  Nee
+                </label>
+                <label>
+                  <input type="radio" name="idk">
+                  Ja
+                </label>
+              </fieldset>
+              <label>
+                Protocolnummer notaris:
+                <input type="number" name="idk">
+              </label>
+              <fieldset class="multi-label">
+                <legend>Voorletter(s), tussenvoegsel(s) en achternaam notaris</legend>
+                <input aria-label="Voorletter(s)" type="text" name="idk">
+                <input aria-label="Tussenvoegsel(s)" type="text" name="idk">
+                <input aria-label="Achternaam" type="text" name="idk">
+              </fieldset>
+              <label>
+                Vestigingsplaats notaris:
+                <input type="text" name="idk">
+              </label>
+              <label>
+                Datum van het testament of van de laatste wijziging:
+                <input type="date" name="idk">
+              </label>
             </ol>
           </fieldset>
+        </li>
+        <li>
           <fieldset>
             <legend>Gegevens gemachtigde</legend>
             <ol class="lettered">
               <li>
-                <fieldset>
+                <fieldset class="multi-label">
                   <legend>
                     Vul 1 van de 3 in: het bsn of RSIN van de gemachtigde, het beconnummer van de adviseur of het protocolnummer van de notaris.
                   </legend>
-                  <dl>
-                    <dt>
-                      <label>
-                        Bsn/RSIN gemachtigde:
-                        <input type="number" name="idk">
-                      </label>
-                    </dt>
-                    <dt>
-                      <label>
-                        Beconnummer adviseur:
-                        <input type="number" name="idk">
-                      </label>
-                    </dt>
-                    <dt>
-                      <label>
-                        Protocolnummer notaris:
-                        <input type="number" name="idk">
-                      </label>
-                    </dt>
-                  </dl>
+                  <label>
+                    Bsn/RSIN gemachtigde:
+                    <input type="number" name="idk">
+                  </label>
+                  <label>
+                    Beconnummer adviseur:
+                    <input type="number" name="idk">
+                  </label>
+                  <label>
+                    Protocolnummer notaris:
+                    <input type="number" name="idk">
+                  </label>
                 </fieldset>
               </li>
               <li>
-                <dl>
-                  <dt>Voorletter(s), tussenvoegsel(s) en achternaam gemachtigde</dt>
-                  <dd>
-                    <input aria-label="Voorletter(s)" type="text" name="idk">
-                    <input aria-label="Tussenvoegsel(s)" type="text" name="idk">
-                    <input aria-label="Achternaam" type="text" name="idk">
-                  </dd>
-                  <dt>
-                    <label>
-                      Naam instelling (bijvoorbeeld een notariskantoor:
-                      <input type="text" name="idk">
-                    </label>
-                  </dt>
-                  <dt>
-                    <fieldset>
-                      <legend>Adres in Nederland</legend>
-                      <dl>
-                        <dt>Straat, huisnummer en toevoeging</dt>
-                        <dd>
-                          <input aria-label="Straat" type="text" name="idk">
-                          <input aria-label="Huisnummer" type="number" name="idk">
-                          <input aria-label="Toevoeging" type="text" name="idk">
-                        </dd>
-                        <dt>Postcode en woonplaats</dt>
-                        <dd>
-                          <input aria-label="Postcode" type="text" name="idk">
-                          <input aria-label="Woonplaats" type="text" name="idk">
-                        </dd>
-                      </dl>
-                    </fieldset>
-                  </dt>
-                  <dt>
-                    <fieldset>
-                      <legend>Adres in het buitenland</legend>
-                      <dl>
-                        <dt>Straat en huisnummer</dt>
-                        <input aria-label="Straat" type="text" name="idk">
-                        <input aria-label="Huisnummer" type="number" name="idk">
-                      </dl>
-                      <dt>Postcode en plaats</dt>
-                      <dd>
-                        <input aria-label="Postcode" type="text" name="idk">
-                        <input aria-label="Plaats" type="text" name="idk">
-                      </dd>
-                      <dt>
-                        <label>
-                          Landcode:
-                          <input type="number" name="idk">
-                        </label>
-                        <dt>
-                          <label>
-                            Telefoonnummer:
-                            <input type="number" name="idk">
-                          </label>
-                        </dt>
-                        <dt>
-                          <label>
-                            E-mailadres:
-                            <input type="email" name="idk">
-                          </label>
-                        </dt>
-                      </dt>
-                    </fieldset>
-                  </dt>
-                </dl>
+                <fieldset class="multi-label">
+                  <legend>
+                    Voorletter(s), tussenvoegsel(s) en achternaam gemachtigde
+                  </legend>
+                  <input aria-label="Voorletter(s)" type="text" name="idk">
+                  <input aria-label="Tussenvoegsel(s)" type="text" name="idk">
+                  <input aria-label="Achternaam" type="text" name="idk">
+                </fieldset>
+                <label>
+                  Naam instelling (bijvoorbeeld een notariskantoor:
+                  <input type="text" name="idk">
+                </label>
+                <fieldset class="multi-label">
+                  <legend>Adres in Nederland</legend>
+                  <fieldset class="multi-label">
+                    <legend>Straat, huisnummer en toevoeging</legend>
+                    <input aria-label="Straat" type="text" name="idk">
+                    <input aria-label="Huisnummer" type="number" name="idk">
+                    <input aria-label="Toevoeging" type="text" name="idk">
+                  </fieldset>
+                  <fieldset class="multi-label">
+                    <legend>Postcode en woonplaats</legend>
+                    <input aria-label="Postcode" type="text" name="idk">
+                    <input aria-label="Woonplaats" type="text" name="idk">
+                  </fieldset>
+                </fieldset>
+                <fieldset class="multi-label">
+                  <legend>Adres in het buitenland</legend>
+                  <fieldset class="multi-label">
+                    <legend>Straat en huisnummer</leg>
+                    <input aria-label="Straat" type="text" name="idk">
+                    <input aria-label="Huisnummer" type="number" name="idk">
+                  </fieldset>
+                  <fieldset class="multi-label">
+                    <legend>Postcode en plaats</legend>
+                    <input aria-label="Postcode" type="text" name="idk">
+                    <input aria-label="Plaats" type="text" name="idk">
+                  </fieldset>
+                  <label>
+                    Landcode:
+                    <input type="number" name="idk">
+                  </label>
+                  <label>
+                    Telefoonnummer:
+                    <input type="number" name="idk">
+                  </label>
+                  <label>
+                    E-mailadres:
+                    <input type="email" name="idk">
+                  </label>
+                </fieldset>
               </li>
             </ol>
           </fieldset>

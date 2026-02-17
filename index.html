@@ -21,7 +21,7 @@
               <li>
                 <label>
                   Voorletter(s):
-                  <input type="text" name="voorletters">
+                  <input type="text" name="voorletters" maxlength="11" required>
                 </label>
                 <label>
                   Tussenvoegsel(s):
@@ -33,7 +33,7 @@
                 </label>
                 <label>
                   Bsn overledene:
-                  <input type="number" name="bsn">
+                  <input type="tel" name="bsn" minlength="9" maxlength="9" pattern="[0-9.]+" required>
                 </label>
                 <label>
                   Overlijdensdatum:

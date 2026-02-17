@@ -73,6 +73,19 @@ form .skip {
   user-select: none;
 }
 
+input[type="text"][required]:invalid,
+input[type="number"][required]:invalid,
+input[type="tel"][required]:invalid {
+  border: 1px solid red;
+  background-color: #FF000010;
+}
+input[type="text"][required]:valid,
+input[type="number"][required]:valid,
+input[type="tel"][required]:valid {
+  border: 1px solid lime;
+  background-color: #00FF0010;
+}
+
 
 * {
   box-sizing: border-box;

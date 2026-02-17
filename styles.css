@@ -1,41 +1,54 @@
+@font-face {
+  font-family: 'NS Sans';
+  src: url('fonts/nssans-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NS Sans';
+  font-weight: bold;
+  src: url('fonts/nssans-bold.woff2') format('woff2');
+}
+
 body {
-  --a: #e6e6e8;
-  --b: #ffffff;
-  --b-heading: #003082;
-  --b-text: #6a6a7a;
-  --c: #003082;
-  --c-text: #ffffff;
-  --d: #001740;
-  --d-text: #ffffff;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: var(--a);
+  --1: #e6e6e8;
+  --2: #ffffff;
+  --2-heading: #003082;
+  --2-text-a: #000000;
+  --2-text-b: #6a6a7a;
+  --3: #003082;
+  --3-text: #ffffff;
+  --4: #001740;
+  --4-text: #ffffff;
+  font-family: 'NS Sans', 'Segoe UI', sans-serif;
+  background-color: var(--1);
 }
 
 .top-bar {
   position: sticky;
   top: 0;
-  background-color: var(--c);
+  background-color: var(--3);
   padding: 15px;
   z-index: 1;
 }
-
 .top-bar > * {
-  color: var(--c-text);
   margin: 0;
+  color: var(--3-text);
 }
 
 form {
   width: clamp(50%, 800px, 100%);
   margin-left:  auto;
   margin-right: auto;
-  background-color: var(--b);
+  background-color: var(--2);
+}
+form > * {
+  color: var(--2-text-a);
 }
 
 form ol li ol {
   list-style-type: lower-alpha;
 }
 
-label, input[type="radio"] {
+label, input[type='radio'] {
   cursor: pointer;
 }
 
@@ -53,7 +66,7 @@ form li > *,
   flex-direction: column;
 }
 
-.parts > .skip {
+form .skip {
   text-decoration: line-through;
   opacity: 0.4;
   pointer-events: none;

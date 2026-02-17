@@ -17,7 +17,7 @@
         <li>
           <fieldset>
             <legend>Gegevens van de overledene</legend>
-            <ol class="lettered">
+            <ol>
               <li>
                 <label>
                   Voorletter(s):
@@ -41,7 +41,7 @@
                 </label>
               </li>
               <li>
-              <fieldset class="multi-label">
+              <fieldset class="multi-label skip">
                 <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
                 <label>
                   <input type="radio" name="had-partner">
@@ -78,7 +78,7 @@
                   Ja
                 </label>
               </fieldset class="multi-label">
-              <label>
+              <label id="test">
                 Datum huwelijkse of partnerschapsvoorwaarden:
                 <input type="date" name="idk">
               </label>
@@ -132,12 +132,22 @@
                 Protocolnummer notaris:
                 <input type="number" name="idk">
               </label>
-              <fieldset class="multi-label">
-                <legend>Voorletter(s), tussenvoegsel(s) en achternaam notaris</legend>
-                <input aria-label="Voorletter(s)" type="text" name="idk">
-                <input aria-label="Tussenvoegsel(s)" type="text" name="idk">
-                <input aria-label="Achternaam" type="text" name="idk">
-              </fieldset>
+              <label>
+                Voorletter(s) notaris:
+                <input type="text" name="idk">
+              </label>
+              <label>
+                Tussenvoegsel(s) notaris:
+                <input type="text" name="idk">
+              </label>
+              <label>
+                Achternaam notaris:
+                <input type="text" name="idk">
+              </label>
+              <label>
+                Bsn overledene:
+                <input type="number" name="idk">
+              </label>
               <label>
                 Vestigingsplaats notaris:
                 <input type="text" name="idk">
@@ -152,9 +162,9 @@
         <li>
           <fieldset>
             <legend>Gegevens gemachtigde</legend>
-            <ol class="lettered">
+            <ol>
               <li>
-                <fieldset class="multi-label">
+                <fieldset>
                   <legend>
                     Vul 1 van de 3 in: het bsn of RSIN van de gemachtigde, het beconnummer van de adviseur of het protocolnummer van de notaris.
                   </legend>
@@ -173,44 +183,63 @@
                 </fieldset>
               </li>
               <li>
-                <fieldset class="multi-label">
-                  <legend>
-                    Voorletter(s), tussenvoegsel(s) en achternaam gemachtigde
-                  </legend>
-                  <input aria-label="Voorletter(s)" type="text" name="idk">
-                  <input aria-label="Tussenvoegsel(s)" type="text" name="idk">
-                  <input aria-label="Achternaam" type="text" name="idk">
-                </fieldset>
+                <label>
+                  Voorletter(s) gemachtigde:
+                  <input type="text" name="idk">
+                </label>
+                <label>
+                  Tussenvoegsel(s) gemachtigde:
+                  <input type="text" name="idk">
+                </label>
+                <label>
+                  Achternaam gemachtigde:
+                  <input type="text" name="idk">
+                </label>
                 <label>
                   Naam instelling (bijvoorbeeld een notariskantoor:
                   <input type="text" name="idk">
                 </label>
                 <fieldset>
                   <legend>Adres in Nederland</legend>
-                  <fieldset class="multi-label">
-                    <legend>Straat, huisnummer en toevoeging</legend>
-                    <input aria-label="Straat" type="text" name="idk">
-                    <input aria-label="Huisnummer" type="number" name="idk">
-                    <input aria-label="Toevoeging" type="text" name="idk">
-                  </fieldset>
-                  <fieldset class="multi-label">
-                    <legend>Postcode en woonplaats</legend>
-                    <input aria-label="Postcode" type="text" name="idk">
-                    <input aria-label="Woonplaats" type="text" name="idk">
-                  </fieldset>
+                  <label>
+                    Straat:
+                    <input type="text" name="idk">
+                  </label>
+                  <label>
+                    Huisnummer:
+                    <input type="number" name="idk">
+                  </label>
+                  <label>
+                    Toevoeging:
+                    <input type="text" name="idk">
+                  </label>
+                  <label>
+                    Postcode:
+                    <input type="text" name="idk">
+                  </label>
+                  <label>
+                    Woonplaats:
+                    <input type="text" name="idk">
+                  </label>
                 </fieldset>
                 <fieldset>
                   <legend>Adres in het buitenland</legend>
-                  <fieldset class="multi-label">
-                    <legend>Straat en huisnummer</leg>
-                    <input aria-label="Straat" type="text" name="idk">
-                    <input aria-label="Huisnummer" type="number" name="idk">
-                  </fieldset>
-                  <fieldset class="multi-label">
-                    <legend>Postcode en plaats</legend>
-                    <input aria-label="Postcode" type="text" name="idk">
-                    <input aria-label="Plaats" type="text" name="idk">
-                  </fieldset>
+                  <label>
+                    Straat:
+                    <input type="text" name="idk">
+                  </label>
+                  <label>
+                    Huisnummer:
+                    <input type="number" name="idk">
+                  </label>
+                  <label>
+                    Postcode:
+                    <input type="text" name="idk">
+                  </label>
+                  <label>
+                    Plaats:
+                    <input type="text" name="idk">
+                  </label>
                   <label>
                     Landcode:
                     <input type="number" name="idk">
@@ -224,9 +253,9 @@
                     <input type="email" name="idk">
                   </label>
                 </fieldset>
-              </li>
-            </ol>
-          </fieldset>
+              </fieldset>
+            </li>
+          </ol>
         </li>
       </ol>
       <div>

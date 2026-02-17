@@ -8,6 +8,7 @@ body {
   --d: #001740;
   --d-text: #ffffff;
   font-family: 'Segoe UI', sans-serif;
+  background-color: var(--a);
 }
 
 .top-bar {
@@ -15,6 +16,7 @@ body {
   top: 0;
   background-color: var(--c);
   padding: 15px;
+  z-index: 1;
 }
 
 .top-bar > * {
@@ -26,6 +28,15 @@ form {
   width: clamp(50%, 800px, 100%);
   margin-left:  auto;
   margin-right: auto;
+  background-color: var(--b);
+}
+
+form ol li ol {
+  list-style-type: lower-alpha;
+}
+
+label, input[type="radio"] {
+  cursor: pointer;
 }
 
 .multi-label {
@@ -33,7 +44,6 @@ form {
   margin: 0;
   border: 0;
 }
-
 form li > *,
 .multi-label {
   padding-top:    8px;
@@ -42,11 +52,6 @@ form li > *,
   display: flex;
   flex-direction: column;
 }
-
-ol.lettered {
-  list-style-type: lower-alpha;
-}
-
 
 * {
   box-sizing: border-box;

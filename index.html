@@ -13,11 +13,11 @@
       <h2>Erfbelasting!!!</h2>
     </div>
     <form>
-      <ol>
+      <ol class="questions">
         <li>
           <fieldset>
             <legend>Gegevens van de overledene</legend>
-            <ol>
+            <ol class="parts">
               <li>
                 <label>
                   Voorletter(s):
@@ -41,128 +41,132 @@
                 </label>
               </li>
               <li>
-              <fieldset class="multi-label skip">
-                <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+                <fieldset class="multi-label">
+                  <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+                  <label>
+                    <input type="radio" name="had-partner">
+                    Nee
+                  </label>
+                  <label>
+                    <input type="radio" name="had-partner">
+                    Ja
+                  </label>
+                </fieldset>
+                <fieldset class="multi-label">
+                  <legend>
+                    Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?
+                  </legend>
+                  <label>
+                    <input type="radio" name="idk">
+                    Nee
+                  </label>
+                  <label>
+                    <input type="radio" name="idk">
+                    Ja
+                  </label>
+                </fieldset>
+                <fieldset class="multi-label">
+                  <legend>
+                    Hadden de overledene en diens partner een finaal verrekenbeding?
+                  </legend>
+                  <label>
+                    <input type="radio" name="idk">
+                    Nee
+                  </label>
+                  <label>
+                    <input type="radio" name="idk">
+                    Ja
+                  </label>
+                </fieldset>
                 <label>
-                  <input type="radio" name="had-partner">
-                  Nee
+                  Datum huwelijkse of partnerschapsvoorwaarden:
+                  <input type="date" name="idk">
+                </label>
+                <fieldset class="multi-label">
+                  <legend>Had de overledene kinderen?</legend>
+                  <label>
+                    <input type="radio" name="idk">
+                    Nee
+                  </label>
+                  <label>
+                    <input type="radio" name="idk">
+                    Ja
+                  </label>
+                </fieldset>
+                <fieldset class="multi-label">
+                  <legend>
+                    Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
+                  </legend>
+                  <label>
+                    <input type="radio" name="idk">
+                    Nee
+                  </label>
+                  <label>
+                    <input type="radio" name="idk">
+                    Ja
+                  </label>
+                </fieldset>
+                <fieldset class="multi-label">
+                  <legend>Had dit overleden kind zelf kinderen?</legend>
+                  <label>
+                    <input type="radio" name="idk">
+                    Nee
+                  </label>
+                  <label>
+                    <input type="radio" name="idk">
+                    Ja
+                  </label>
+                </fieldset>
+                <fieldset class="multi-label">
+                  <legend>Had de overledene een testament?</legend>
+                  <label>
+                    <input type="radio" name="idk">
+                    Nee
+                  </label>
+                  <label>
+                    <input type="radio" name="idk">
+                    Ja
+                  </label>
+                </fieldset>
+                <label>
+                  Protocolnummer notaris:
+                  <input type="number" name="idk">
                 </label>
                 <label>
-                  <input type="radio" name="had-partner">
-                  Ja
-                </label>
-              </fieldset>
-              <fieldset class="multi-label">
-                <legend>
-                  Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?
-                </legend>
-                <label>
-                  <input type="radio" name="idk">
-                  Nee
+                  Voorletter(s) notaris:
+                  <input type="text" name="idk">
                 </label>
                 <label>
-                  <input type="radio" name="idk">
-                  Ja
-                </label>
-              </fieldset>
-              <fieldset class="multi-label">
-                <legend>
-                  Hadden de overledene en diens partner een finaal verrekenbeding?
-                </legend>
-                <label>
-                  <input type="radio" name="idk">
-                  Nee
+                  Tussenvoegsel(s) notaris:
+                  <input type="text" name="idk">
                 </label>
                 <label>
-                  <input type="radio" name="idk">
-                  Ja
-                </label>
-              </fieldset class="multi-label">
-              <label id="test">
-                Datum huwelijkse of partnerschapsvoorwaarden:
-                <input type="date" name="idk">
-              </label>
-              <fieldset class="multi-label">
-                <legend>Had de overledene kinderen?</legend>
-                <label>
-                  <input type="radio" name="idk">
-                  Nee
+                  Achternaam notaris:
+                  <input type="text" name="idk">
                 </label>
                 <label>
-                  <input type="radio" name="idk">
-                  Ja
-                </label>
-              </fieldset>
-              <fieldset class="multi-label">
-                <legend>
-                  Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
-                </legend>
-                <label>
-                  <input type="radio" name="idk">
-                  Nee
+                  Bsn overledene:
+                  <input type="number" name="idk">
                 </label>
                 <label>
-                  <input type="radio" name="idk">
-                  Ja
-                </label>
-              </fieldset>
-              <fieldset class="multi-label">
-                <legend>Had dit overleden kind zelf kinderen?</legend>
-                <label>
-                  <input type="radio" name="idk">
-                  Nee
+                  Vestigingsplaats notaris:
+                  <input type="text" name="idk">
                 </label>
                 <label>
-                  <input type="radio" name="idk">
-                  Ja
+                  Datum van het testament of van de laatste wijziging:
+                  <input type="date" name="idk">
                 </label>
-              </fieldset>
-              <fieldset class="multi-label">
-                <legend>Had de overledene een testament?</legend>
-                <label>
-                  <input type="radio" name="idk">
-                  Nee
-                </label>
-                <label>
-                  <input type="radio" name="idk">
-                  Ja
-                </label>
-              </fieldset>
-              <label>
-                Protocolnummer notaris:
-                <input type="number" name="idk">
-              </label>
-              <label>
-                Voorletter(s) notaris:
-                <input type="text" name="idk">
-              </label>
-              <label>
-                Tussenvoegsel(s) notaris:
-                <input type="text" name="idk">
-              </label>
-              <label>
-                Achternaam notaris:
-                <input type="text" name="idk">
-              </label>
-              <label>
-                Bsn overledene:
-                <input type="number" name="idk">
-              </label>
-              <label>
-                Vestigingsplaats notaris:
-                <input type="text" name="idk">
-              </label>
-              <label>
-                Datum van het testament of van de laatste wijziging:
-                <input type="date" name="idk">
-              </label>
+              </li>
+              <li>
+                <p>Test</p>
+              </li>
             </ol>
           </fieldset>
         </li>
         <li>
           <fieldset>
             <legend>Gegevens gemachtigde</legend>
-            <ol>
+            <ol class="parts">
               <li>
                 <fieldset>
                   <legend>
@@ -253,9 +257,9 @@
                     <input type="email" name="idk">
                   </label>
                 </fieldset>
-              </fieldset>
-            </li>
-          </ol>
+              </li>
+            </ol>
+          </fieldset>
         </li>
       </ol>
       <div>

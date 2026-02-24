@@ -1,70 +1,152 @@
 @font-face {
   font-family: 'NS Sans';
-  src: url('fonts/nssans-regular.woff2') format('woff2');
+  src: url('./fonts/nssans-regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'NS Sans';
   font-weight: bold;
-  src: url('fonts/nssans-bold.woff2') format('woff2');
+  src: url('./fonts/nssans-bold.woff2') format('woff2');
 }
 
 body {
-  --1: #e6e6e8;
-  --2: #ffffff;
+  --1: #EBF5FF;
+  --2: white;
   --2-heading: #003082;
-  --2-text-a: #000000;
-  --2-text-b: #6a6a7a;
+  --2-text-a: #252528;
+  --2-text-b: #6A6A7A;
   --3: #003082;
-  --3-text: #ffffff;
+  --3-text: white;
   --4: #001740;
-  --4-text: #ffffff;
-  font-family: 'NS Sans', 'Segoe UI', sans-serif;
+  --4-text: white;
+  --button-a: #FFC917;
+  --button-a-hover: #FFB519;
+  --button-b: #F0F1F2;
+  --button-b-hover: #EBEBEE;
+  --button-text: #003082;
+  --form-border: #C4C5CB;
+  font-size: 16px;
+  font-family: 'NS Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
   background-color: var(--1);
 }
 
-.top-bar {
+nav {
   position: sticky;
   top: 0;
   background-color: var(--3);
   padding: 15px;
   z-index: 1;
 }
-.top-bar > * {
+nav > * {
   margin: 0;
   color: var(--3-text);
 }
 
 form {
-  width: clamp(50%, 800px, 100%);
+  width: clamp(40%, 600px, 100%);
   margin-left:  auto;
   margin-right: auto;
+  padding: 16px;
   background-color: var(--2);
-}
-form > * {
   color: var(--2-text-a);
+
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+  fieldset.question {
+    counter-reset: item;
+
+    fieldset:not(.label) > * {
+      padding-top:    8px;
+      padding-bottom: 8px;
+
+      &:not(legend) {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+
+    > fieldset {
+      counter-increment: item;
+      --i: counter(item);
+    
+      > legend::after {
+        content: 'Vraag ' var(--i);
+      }
+    }
+
+    legend,
+    label:not(:has(> input[type='radio'])) {
+      color: var(--2-heading);
+      font-weight: bold;
+    }
+    > legend {
+      font-size: 24px;
+    }
+    > fieldset > legend {
+      font-size: 20px;
+    }
+  }
+  
+  input:where(
+    [type='text'],
+    [type='email'],
+    [type='number'],
+    [type='tel'],
+    [type='date']
+  ) {
+    min-height: 50px;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid var(--form-border);
+    color: var(--2-text-a);
+    font-size: 1em;
+    font-family: inherit;
+  }
+
+  label, input[type='radio'] {
+    cursor: pointer;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+
+    > * {
+      all: unset;
+      display: block;
+      flex: 1;
+      height: 50px;
+      padding-left:  16px;
+      padding-right: 16px;
+      border-radius: 6px;
+      align-content: center;
+      text-align: center;
+      background-color: var(--button-b);
+      color: var(--button-text);
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover:not(:active) {
+        background-color: var(--button-b-hover);
+      }
+    }
+
+    > input[type='submit'] {
+      background-color: var(--button-a);
+
+      &:hover:not(:active) {
+        background-color: var(--button-a-hover);
+      }
+    }
+  }
 }
 
-form ol li ol {
-  list-style-type: lower-alpha;
-}
 
-label, input[type='radio'] {
-  cursor: pointer;
-}
-
-.multi-label {
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-form li > *,
-.multi-label {
-  padding-top:    8px;
-  padding-bottom: 8px;
-  gap: 8px;
-  display: flex;
-  flex-direction: column;
-}
+/* debug */
 
 form .skip {
   text-decoration: line-through;
@@ -73,15 +155,23 @@ form .skip {
   user-select: none;
 }
 
-input[type="text"][required]:invalid,
-input[type="number"][required]:invalid,
-input[type="tel"][required]:invalid {
+:where(
+  [type='text'],
+  [type='email'],
+  [type='number'],
+  [type='tel'],
+  [type='date']
+)[required]:user-invalid {
   border: 1px solid red;
   background-color: #FF000010;
 }
-input[type="text"][required]:valid,
-input[type="number"][required]:valid,
-input[type="tel"][required]:valid {
+:where(
+  [type='text'],
+  [type='email'],
+  [type='number'],
+  [type='tel'],
+  [type='date']
+)[required]:valid {
   border: 1px solid lime;
   background-color: #00FF0010;
 }

@@ -35,7 +35,7 @@
           </label>
           <label>
             Overlijdensdatum:
-            <input type="date" name="death-date" max="2026-01-20" data-max-today="" required="">
+            <input type="date" name="datum-overlijden" max="2026-01-20" data-max-today="" required="">
           </label>
         </fieldset>
         <fieldset>
@@ -56,11 +56,11 @@
               Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?
             </legend>
             <label>
-              <input type="radio" name="idk">
+              <input type="radio" name="had-partnerschapsvoorwaarden">
               Nee
             </label>
             <label>
-              <input type="radio" name="idk">
+              <input type="radio" name="had-partnerschapsvoorwaarden">
               Ja
             </label>
           </fieldset>
@@ -69,26 +69,26 @@
               Hadden de overledene en diens partner een finaal verrekenbeding?
             </legend>
             <label>
-              <input type="radio" name="idk">
+              <input type="radio" name="had-verrekenbeding">
               Nee
             </label>
             <label>
-              <input type="radio" name="idk">
+              <input type="radio" name="had-verrekenbeding">
               Ja
             </label>
           </fieldset>
           <label>
             Datum huwelijkse of partnerschapsvoorwaarden:
-            <input type="date" name="idk">
+            <input type="date" name="datum-partnerschapsvoorwaarden">
           </label>
           <fieldset class="label">
             <legend>Had de overledene kinderen?</legend>
             <label>
-              <input type="radio" name="idk">
+              <input type="radio" name="had-kinderen">
               Nee
             </label>
             <label>
-              <input type="radio" name="idk">
+              <input type="radio" name="had-kinderen">
               Ja
             </label>
           </fieldset>
@@ -97,63 +97,63 @@
               Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
             </legend>
             <label>
-              <input type="radio" name="idk">
+              <input type="radio" name="had-overleden-kind">
               Nee
             </label>
             <label>
-              <input type="radio" name="idk">
+              <input type="radio" name="had-overleden-kind">
               Ja
             </label>
           </fieldset>
           <fieldset class="label">
             <legend>Had dit overleden kind zelf kinderen?</legend>
             <label>
-              <input type="radio" name="idk">
+              <input type="radio" name="overleden-kind-had-kind">
               Nee
             </label>
             <label>
-              <input type="radio" name="idk">
+              <input type="radio" name="overleden-kind-had-kind">
               Ja
             </label>
           </fieldset>
           <fieldset class="label">
             <legend>Had de overledene een testament?</legend>
             <label>
-              <input type="radio" name="idk">
+              <input type="radio" name="had-testament">
               Nee
             </label>
             <label>
-              <input type="radio" name="idk">
+              <input type="radio" name="had-testament">
               Ja
             </label>
           </fieldset>
           <label>
             Protocolnummer notaris:
-            <input type="tel" name="idk" minlength="6" maxlength="6" pattern="[0-9.]+" required="">
+            <input type="tel" name="notaris-protocolnummer" maxlength="6" pattern="[0-9.]+" required="">
           </label>
           <label>
             Voorletter(s) notaris:
-            <input type="text" name="idk" maxlength="11">
+            <input type="text" name="notaris-voorletters" maxlength="11">
           </label>
           <label>
             Tussenvoegsel(s) notaris:
-            <input type="text" name="idk">
+            <input type="text" name="notaris-tussenvoegsels">
           </label>
           <label>
             Achternaam notaris:
-            <input type="text" name="idk">
+            <input type="text" name="notaris-achternaam">
           </label>
           <label>
             Bsn overledene:
-            <input type="tel" name="idk" minlength="9" maxlength="9" pattern="[0-9.]+" required="">
+            <input type="tel" name="notaris-bsn" minlength="9" maxlength="9" pattern="[0-9.]+" required="">
           </label>
           <label>
             Vestigingsplaats notaris:
-            <input type="text" name="idk">
+            <input type="text" name="notaris-vestigingsplaats">
           </label>
           <label>
             Datum van het testament of van de laatste wijziging:
-            <input type="date" name="idk">
+            <input type="date" name="datum-testament">
           </label>
         </fieldset>
       </fieldset>
@@ -167,15 +167,15 @@
             </legend>
             <label>
               Bsn/RSIN gemachtigde:
-              <input type="number" name="idk">
+              <input type="tel" name="gemachtigde-bsn" minlength="9" maxlength="9" pattern="[0-9.]+" required="">
             </label>
             <label>
               Beconnummer adviseur:
-              <input type="number" name="idk">
+              <input type="tel" name="gemachtigde-adviseur-beconnummer" maxlength="6" pattern="[0-9.]+" required="">
             </label>
             <label>
               Protocolnummer notaris:
-              <input type="number" name="idk">
+              <input type="tel" name="gemachtigde-notaris-protocolnummer" maxlength="6" pattern="[0-9.]+" required="">
             </label>
           </fieldset>
         </fieldset>
@@ -183,72 +183,72 @@
           <legend></legend>
           <label>
             Voorletter(s) gemachtigde:
-            <input type="text" name="idk">
+            <input type="text" name="gemachtigde-voorletters">
           </label>
           <label>
             Tussenvoegsel(s) gemachtigde:
-            <input type="text" name="idk">
+            <input type="text" name="gemachtigde-tussenvoegsels">
           </label>
           <label>
             Achternaam gemachtigde:
-            <input type="text" name="idk">
+            <input type="text" name="gemachtigde-achternaam">
           </label>
           <label>
             Naam instelling (bijvoorbeeld een notariskantoor:
-            <input type="text" name="idk">
+            <input type="text" name="gemachtigde-instelling">
           </label>
           <fieldset>
             <legend>Adres in Nederland</legend>
             <label>
               Straat:
-              <input type="text" name="idk">
+              <input type="text" name="gemachtigde-straat">
             </label>
             <label>
               Huisnummer:
-              <input type="number" name="idk">
+              <input type="tel" name="gemachtigde-huisnummer" maxlength="6" pattern="[0-9.]+" required="">
             </label>
             <label>
               Toevoeging:
-              <input type="text" name="idk">
+              <input type="text" name="gemachtigde-adres-toevoeging">
             </label>
             <label>
               Postcode:
-              <input type="text" name="idk">
+              <input type="text" name="gemachtigde-postcode">
             </label>
             <label>
               Woonplaats:
-              <input type="text" name="idk">
+              <input type="text" name="gemachtigde-woonplaats">
             </label>
           </fieldset>
           <fieldset>
             <legend>Adres in het buitenland</legend>
             <label>
               Straat:
-              <input type="text" name="idk">
+              <input type="text" name="gemachtigde-buitenland-straat">
             </label>
             <label>
               Huisnummer:
-              <input type="number" name="idk">
+              <input type="number" name="gemachtigde-buitenland-huisnummer">
             </label>
             <label>
               Postcode:
-              <input type="text" name="idk">
+              <input type="text" name="gemachtigde-buitenland-postcode">
             </label>
             <label>
               Plaats:
-              <input type="text" name="idk">
+              <input type="text" name="gemachtigde-buitenland-plaats">
             </label>
             <label>
               Landcode:
-              <input type="number" name="idk">
+              <input type="tel" name="gemachtigde-buitenland-landcode" maxlength="6" pattern="[0-9.]+">
             </label>
             <label>
               Telefoonnummer:
-              <input type="number" name="idk">
+              <input type="tel" name="gemachtigde-tel" pattern="[0-9.]+" required="">
             </label>
             <label>
               E-mailadres:
-              <input type="email" name="idk">
+              <input type="email" name="gemachtigde-email">
             </label>
           </fieldset>
         </fieldset>

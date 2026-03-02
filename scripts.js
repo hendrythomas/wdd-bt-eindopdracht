@@ -37,15 +37,26 @@ function skipToElem(e) {
   const skipperElem = e.target;
   const anchor = skipperElem.dataset.skip;
   if (anchor === undefined) return;
-  
-  const skipperPart = skipperElem.closest('.parts > *');
-  if (skipperPart === null) return;
 
-  skipperPart.classList.add('skipper');
+  // set anchor
   location.hash = anchor;
-  const hideElems = document.querySelectorAll('.parts > .skipper ~ :has(~ :target)');
-  skipperPart.classList.remove('skipper');
+
+  // find skipped elements
+  skipperElem.classList.add('skipper');
+  const hideElems = document.querySelectorAll(
+    '.question:has(.skipper) > * > :has(.skipper) ~ *, .question:has(:target) :has(~ :target)'
+  );
+  skipperElem.classList.remove('skipper');
+  // .a ~ :has(~ .b)
+  /*
+    .question:has(.skipper) > * > :has(.skipper) ~ *,
+    .question:has(.skipper) ~ :has(~ .question:has(:target)) > *,
+    .question:has(:target) :has(~ :target)
+  */
+
+  // add required + class
   
+  // add class
   for (const hideElem of hideElems) {
     hideElem.classList.add('skip');
   }
@@ -55,21 +66,27 @@ function unskipToElem(e) {
   const skipperElem = e.target;
   const anchor = skipperElem.dataset.unskip;
   if (anchor === undefined) return;
-  
-  const skipperPart = skipperElem.closest('.parts > *');
-  if (skipperPart === null) return;
 
-  skipperPart.classList.add('skipper');
-  location.hash = anchor;
-  const hideElems = document.querySelectorAll('.parts > .skipper ~ :has(~ :target)');
-  skipperPart.classList.remove('skipper');
+  // find skipped elements
+  skipperElem.classList.add('skipper');
+  const hideElems = document.querySelectorAll(
+    '.question:has(.skipper) > * > :has(.skipper) ~ *, .question:has(:target) :has(~ :target)'
+  );
 
-  // scroll to first hidden element
-  if (hideElems.length === 0) return;
+  // remove required on class
+
+  // scroll to closest fieldset element
   location.hash = '';
-  hideElems[0].scrollIntoView();
+  const fieldsetElem = document.querySelector('fieldset:has(> .skipper), fieldset:has(> * > .skipper)');
+  if (fieldsetElem === null) return;
+
+  fieldsetElem.scrollIntoView();
+  skipperElem.classList.remove('skipper');
   
+  // remove class
   for (const hideElem of hideElems) {
     hideElem.classList.remove('skip');
   }
 }
+
+//TODO: pick one input

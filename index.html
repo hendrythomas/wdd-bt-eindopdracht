@@ -167,15 +167,15 @@
             </legend>
             <label>
               Bsn/RSIN gemachtigde:
-              <input type="tel" name="gemachtigde-bsn" minlength="8" maxlength="9" pattern="[0-9.]+" placeholder required>
+              <input type="tel" name="gemachtigde-bsn" minlength="8" maxlength="9" pattern="[0-9.]+" placeholder>
             </label>
-            <label>
+            <label id="test">
               Beconnummer adviseur:
-              <input type="tel" name="gemachtigde-adviseur-beconnummer" maxlength="6" pattern="[0-9.]+" placeholder required>
+              <input type="tel" name="gemachtigde-adviseur-beconnummer" maxlength="6" pattern="[0-9.]+" placeholder>
             </label>
             <label>
               Protocolnummer notaris:
-              <input type="tel" name="gemachtigde-notaris-protocolnummer" maxlength="6" pattern="[0-9.]+" placeholder required>
+              <input type="tel" name="gemachtigde-notaris-protocolnummer" maxlength="6" pattern="[0-9.]+" placeholder>
             </label>
           </fieldset>
         </fieldset>
@@ -183,7 +183,7 @@
           <legend></legend>
           <label>
             Voorletter(s) gemachtigde:
-            <input type="text" name="gemachtigde-voorletters" placeholder>
+            <input type="text" name="gemachtigde-voorletters" placeholder required>
           </label>
           <label>
             Tussenvoegsel(s) gemachtigde:
@@ -205,7 +205,7 @@
             </label>
             <label>
               Huisnummer:
-              <input type="tel" name="gemachtigde-huisnummer" maxlength="6" pattern="[0-9.]+" placeholder required>
+              <input type="tel" name="gemachtigde-huisnummer" maxlength="6" pattern="[0-9.]+" placeholder>
             </label>
             <label>
               Toevoeging:
@@ -244,7 +244,7 @@
             </label>
             <label>
               Telefoonnummer:
-              <input type="tel" name="gemachtigde-tel" pattern="[0-9.]+" placeholder required>
+              <input type="tel" name="gemachtigde-tel" pattern="[0-9.]+" placeholder>
             </label>
             <label>
               E-mailadres:
@@ -255,8 +255,8 @@
       </fieldset>
       <div class="buttons">
         <!-- TODO: use button with correct type? -->
-        <div>Tussentijds opslaan</div>
-        <input type="submit" value="Verzenden">
+        <button type="button">Tussentijds opslaan</button>
+        <button type="submit">Verzenden</button>
       </div>
     </form>
   </body>

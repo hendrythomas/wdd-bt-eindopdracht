@@ -159,19 +159,18 @@ form .skip {
   [type='text'],
   [type='email'],
   [type='number'],
-  [type='tel'],
-  [type='date']
-)[required]:user-invalid {
+  [type='tel']
+):user-invalid:not(:focus) {
   border: 1px solid red;
   background-color: #FF000010;
 }
+
 :where(
   [type='text'],
   [type='email'],
   [type='number'],
-  [type='tel'],
-  [type='date']
-)[required]:valid {
+  [type='tel']
+):user-valid:not(:placeholder-shown) {
   border: 1px solid lime;
   background-color: #00FF0010;
 }

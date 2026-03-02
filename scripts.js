@@ -44,21 +44,23 @@ function skipToElem(e) {
   // find skipped elements
   skipperElem.classList.add('skipper');
   const hideElems = document.querySelectorAll(
+    // selector to skip elements inbetween (not supported):
+    // .question:has(.skipper) ~ :has(~ .question:has(:target)) > *
     '.question:has(.skipper) > * > :has(.skipper) ~ *, .question:has(:target) :has(~ :target)'
   );
   skipperElem.classList.remove('skipper');
-  // .a ~ :has(~ .b)
-  /*
-    .question:has(.skipper) > * > :has(.skipper) ~ *,
-    .question:has(.skipper) ~ :has(~ .question:has(:target)) > *,
-    .question:has(:target) :has(~ :target)
-  */
-
-  // add required + class
   
-  // add class
   for (const hideElem of hideElems) {
+    // add class
     hideElem.classList.add('skip');
+
+    // add required + class to input
+    const inputElem = hideElem.querySelector('input');
+    if (inputElem === null) continue;
+    if (inputElem.required === true) {
+      inputElem.required = false;
+      inputElem.classList.add('skipRequired');
+    }
   }
 }
 
@@ -73,8 +75,6 @@ function unskipToElem(e) {
     '.question:has(.skipper) > * > :has(.skipper) ~ *, .question:has(:target) :has(~ :target)'
   );
 
-  // remove required on class
-
   // scroll to closest fieldset element
   location.hash = '';
   const fieldsetElem = document.querySelector('fieldset:has(> .skipper), fieldset:has(> * > .skipper)');
@@ -83,9 +83,15 @@ function unskipToElem(e) {
   fieldsetElem.scrollIntoView();
   skipperElem.classList.remove('skipper');
   
-  // remove class
   for (const hideElem of hideElems) {
+    // remove class
     hideElem.classList.remove('skip');
+    
+    // remove required on class
+    const inputElem = hideElem.querySelector('input');
+    if (inputElem === null) continue;
+    if (inputElem.classList.contains('skipRequired'))
+      inputElem.required = true;
   }
 }
 

@@ -143,6 +143,28 @@ form {
       }
     }
   }
+
+  input:where(
+    [type='text'],
+    [type='email'],
+    [type='number'],
+    [type='tel']
+  ):user-invalid:not(:focus) {
+    /* after blur if not typing */
+    border: 1px solid red;
+    background-color: #FF000010;
+  }
+  
+  input:where(
+    [type='text'],
+    [type='email'],
+    [type='number'],
+    [type='tel']
+  ):valid:not(:placeholder-shown) {
+    /* always if has text */
+    border: 1px solid lime;
+    background-color: #00FF0010;
+  }
 }
 
 
@@ -153,26 +175,6 @@ form .skip {
   opacity: 0.4;
   pointer-events: none;
   user-select: none;
-}
-
-:where(
-  [type='text'],
-  [type='email'],
-  [type='number'],
-  [type='tel']
-):user-invalid:not(:focus) {
-  border: 1px solid red;
-  background-color: #FF000010;
-}
-
-:where(
-  [type='text'],
-  [type='email'],
-  [type='number'],
-  [type='tel']
-):user-valid:not(:placeholder-shown) {
-  border: 1px solid lime;
-  background-color: #00FF0010;
 }
 
 

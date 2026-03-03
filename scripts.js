@@ -11,7 +11,7 @@ function setMaxToday() {
 
   // fix 0s
   let day = date.getDate().toString();
-  if (day.length === 1) day = `0${month}`;
+  if (day.length === 1) day = `0${day}`;
   let month = date.getMonth().toString();
   if (month.length === 1) month = `0${month}`;
 
@@ -44,8 +44,6 @@ function skipToElem(e) {
   // find skipped elements
   skipperElem.classList.add('skipper');
   const hideElems = document.querySelectorAll(
-    // selector to skip elements inbetween (not supported):
-    // .question:has(.skipper) ~ :has(~ .question:has(:target)) > *
     '.question:has(.skipper) > * > :has(.skipper) ~ *, .question:has(:target) :has(~ :target)'
   );
   skipperElem.classList.remove('skipper');

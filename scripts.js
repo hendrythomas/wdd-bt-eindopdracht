@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  listenSkippers();
   setMaxToday();
 });
 
@@ -19,77 +18,6 @@ function setMaxToday() {
 
   for (const dateElem of dateElems) {
     dateElem.setAttribute('max', today);
-  }
-}
-
-function listenSkippers() {
-  const skipperElems = document.querySelectorAll('[data-skip]');
-  for (const skipperElem of skipperElems) {
-    skipperElem.addEventListener('change', skipToElem);
-  }
-  const unskipperElems = document.querySelectorAll('[data-unskip]');
-  for (const unskipperElem of unskipperElems) {
-    unskipperElem.addEventListener('change', unskipToElem);
-  }
-}
-
-function skipToElem(e) {
-  const skipperElem = e.target;
-  const anchor = skipperElem.dataset.skip;
-  if (anchor === undefined) return;
-
-  // set anchor
-  location.hash = anchor;
-
-  // find skipped elements
-  skipperElem.classList.add('skipper');
-  const hideElems = document.querySelectorAll(
-    '.question:has(.skipper) > * > :has(.skipper) ~ *, .question:has(:target) :has(~ :target)'
-  );
-  skipperElem.classList.remove('skipper');
-  
-  for (const hideElem of hideElems) {
-    // add class
-    hideElem.classList.add('skip');
-
-    // add required + class to input
-    const inputElem = hideElem.querySelector('input');
-    if (inputElem === null) continue;
-    if (inputElem.required === true) {
-      inputElem.required = false;
-      inputElem.classList.add('skipRequired');
-    }
-  }
-}
-
-function unskipToElem(e) {
-  const skipperElem = e.target;
-  const anchor = skipperElem.dataset.unskip;
-  if (anchor === undefined) return;
-
-  // find skipped elements
-  skipperElem.classList.add('skipper');
-  const hideElems = document.querySelectorAll(
-    '.question:has(.skipper) > * > :has(.skipper) ~ *, .question:has(:target) :has(~ :target)'
-  );
-
-  // scroll to closest fieldset element
-  location.hash = '';
-  const fieldsetElem = document.querySelector('fieldset:has(> .skipper), fieldset:has(> * > .skipper)');
-  if (fieldsetElem === null) return;
-
-  fieldsetElem.scrollIntoView();
-  skipperElem.classList.remove('skipper');
-  
-  for (const hideElem of hideElems) {
-    // remove class
-    hideElem.classList.remove('skip');
-    
-    // remove required on class
-    const inputElem = hideElem.querySelector('input');
-    if (inputElem === null) continue;
-    if (inputElem.classList.contains('skipRequired'))
-      inputElem.required = true;
   }
 }
 

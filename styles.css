@@ -169,16 +169,25 @@ form {
     border: 1px solid lime;
     background-color: #00FF0010;
   }
-}
 
-
-/* debug */
-
-form .skip {
-  text-decoration: line-through;
-  opacity: 0.4;
-  pointer-events: none;
-  user-select: none;
+  /* show first/next input */
+  /* :not(:has(:not()) requires everything, instead of anything */
+  .question:where(
+    :first-of-type,
+    :not(:has(input:not(:where(:user-valid, :user-invalid)))) + .question
+  ) {
+    > fieldset:where(
+      :first-of-type,
+      :not(:has(input:not(:where(:user-valid, :user-invalid)))) + fieldset
+    ) {
+      > :where(
+        :first-of-type,
+        :not(:has(input:not(:where(:user-valid, :user-invalid)))) + *
+      ) {
+        color: green !important;
+      }
+    }
+  }
 }
 
 

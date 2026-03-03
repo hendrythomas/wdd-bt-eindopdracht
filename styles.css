@@ -76,7 +76,7 @@ form {
       counter-increment: item;
       --i: counter(item);
     
-      > legend::after {
+      > legend::before {
         content: 'Vraag ' var(--i);
       }
     }
@@ -171,26 +171,38 @@ form {
   }
 
   /* show first/next input */
-  /* :not(:has(:not()) requires everything, instead of anything */
   .question > fieldset > * {
     opacity: 0.5;
     filter: saturate(0);
+    user-select: none;
     pointer-events: none;
   }
   .question:where(
     :first-of-type,
-    :not(:has(input:not(:where(:user-valid, :user-invalid)))) + .question
+    :not(:has(:where(
+      /* :not(:has(:not()) requires everything, instead of anything */
+      input:not(:where(:user-valid, :user-invalid)),
+      input[data-skip]:checked
+    ))) + .question
   ) {
     > fieldset:where(
       :first-of-type,
-      :not(:has(input:not(:where(:user-valid, :user-invalid)))) + fieldset
+      :not(:has(:where(
+        input:not(:where(:user-valid, :user-invalid)),
+        input[data-skip]:checked
+      ))) + fieldset
     ) {
       > :where(
         :first-of-type,
-        :not(:has(input:not(:where(:user-valid, :user-invalid)))) + *
+        :not(:has(:where(
+          input:not(:where(:user-valid, :user-invalid)),
+          input[data-skip]:checked
+        ))) + *,
+        :target, * target
       ) {
         opacity: 1;
         filter: none;
+        user-select: auto;
         pointer-events: all;
       }
     }

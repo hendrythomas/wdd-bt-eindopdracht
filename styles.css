@@ -172,6 +172,11 @@ form {
 
   /* show first/next input */
   /* :not(:has(:not()) requires everything, instead of anything */
+  .question > fieldset > * {
+    opacity: 0.5;
+    filter: saturate(0);
+    pointer-events: none;
+  }
   .question:where(
     :first-of-type,
     :not(:has(input:not(:where(:user-valid, :user-invalid)))) + .question
@@ -184,7 +189,9 @@ form {
         :first-of-type,
         :not(:has(input:not(:where(:user-valid, :user-invalid)))) + *
       ) {
-        color: green !important;
+        opacity: 1;
+        filter: none;
+        pointer-events: all;
       }
     }
   }

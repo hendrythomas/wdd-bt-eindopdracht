@@ -44,19 +44,7 @@ function skipToElem(e) {
 }
 
 function unskipToElem(e) {
-  const skipperElem = e.target;
-  const anchor = skipperElem.dataset.unskip;
-  if (anchor === undefined) return;
-
-  location.hash = '';
-
-  // scroll to closest fieldset element
-  skipperElem.classList.add('skipper');
-  const fieldsetElem = document.querySelector('fieldset:has(> .skipper), fieldset:has(> * > .skipper)');
-  skipperElem.classList.remove('skipper');
-  if (fieldsetElem === null) return;
-
-  fieldsetElem.scrollIntoView();
+  location.hash = '/';
 
   // set required
 }

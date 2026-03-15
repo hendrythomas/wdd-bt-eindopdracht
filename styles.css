@@ -180,7 +180,6 @@ form {
   .question:where(
     :first-of-type,
     :not(:has(:where(
-      /* :not(:has(:not()) requires everything, instead of anything */
       input:not(:where(:user-valid, :user-invalid)),
       input[data-skip]:checked
     ))) + .question
@@ -194,10 +193,10 @@ form {
     ) {
       > :where(
         :first-of-type,
-        :not(:has(:where(
-          input:not(:where(:user-valid, :user-invalid)),
-          input[data-skip]:checked
-        ))) + *,
+        :has(input:where(
+          :user-valid,
+          :user-invalid
+        )):not(:has([data-skip]:checked)) + *,
         :target, * target
       ) {
         opacity: 1;

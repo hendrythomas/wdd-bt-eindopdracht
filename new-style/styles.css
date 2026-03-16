@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  --1: #EBF5FF;
+  --1: #e6e6e8;
   --2: white;
   --2-heading: #003082;
   --2-text-a: #252528;
@@ -50,47 +50,112 @@ form {
   width: clamp(40%, 600px, 100%);
   margin-left:  auto;
   margin-right: auto;
-  padding: 16px;
+  padding: 1rem;
   background-color: var(--2);
   color: var(--2-text-a);
-  
-  .step:not(:has(> :checked:not([data-skip]))) > .step {
-    display: none;
-  }
 
-  > fieldset:first-of-type {
+  > :first-child {
     margin-top: 0;
-  }
-
-  fieldset > legend {
-    font-weight: bold;
-    color: var(--2-heading);
-  }
-
-  > fieldset > legend {
-    font-size: 1.6rem;
-  }
-  fieldset.question > legend {
-    font-size: 1.4rem;
   }
 
   fieldset {
     padding: 0;
     margin: 0;
-    margin-top: 20px;
     border: 0;
+  }
 
-    > input + label {
+  fieldset > legend,
+  h1, h2 {
+    font-weight: bold;
+    color: var(--2-heading);
+    margin-top: 1.4rem;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.7rem;
+    
+    /* hide steps when skipped or nothing checked */
+    &:not(:has(> label > :checked:not([data-skip]))) > .step {
+      display: none;
+    }
+
+    > :first-of-type {
+      margin-top: 0.7rem;
+    }
+  }
+
+  label, input[type='radio'] {
+    cursor: pointer;
+  }
+  
+  input:where(
+    [type='text'],
+    [type='email'],
+    [type='number'],
+    [type='tel'],
+    [type='date']
+  ) {
+    min-height: 50px;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid var(--form-border);
+    color: var(--2-text-a);
+    font-size: 1em;
+    font-family: inherit;
+
+    /* validation */
+    &:user-invalid:not(:focus) {
+      /* after blur if not typing */
+      border: 1px solid red;
+      background-color: #FF000010;
+    }
+    &:valid:not(:placeholder-shown) {
+      /* always if has text */
+      border: 1px solid lime;
+      background-color: #00FF0010;
+    }
+  }
+
+  
+  .buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+
+    > * {
+      all: unset;
+      display: block;
+      flex: 1;
+      min-height: 50px;
+      padding-left:  16px;
+      padding-right: 16px;
+      border-radius: 6px;
+      align-content: center;
+      text-align: center;
+      background-color: var(--button-b);
+      color: var(--button-text);
+      font-weight: bold;
       cursor: pointer;
-      
-      &::after {
-        content: '';
-        display: block;
+
+      &:hover:not(:active) {
+        background-color: var(--button-b-hover);
       }
     }
-    > input[type='radio']:has(+ label) {
-      margin-top: 10px;
-      cursor: pointer;
+
+    > [type='submit'] {
+      background-color: var(--button-a);
+
+      &:hover:not(:active) {
+        background-color: var(--button-a-hover);
+      }
     }
   }
 }

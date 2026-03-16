@@ -1,0 +1,107 @@
+@font-face {
+  font-family: 'NS Sans';
+  src: url('./fonts/nssans-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NS Sans';
+  font-weight: bold;
+  src: url('./fonts/nssans-bold.woff2') format('woff2');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  --1: #EBF5FF;
+  --2: white;
+  --2-heading: #003082;
+  --2-text-a: #252528;
+  --2-text-b: #6A6A7A;
+  --3: #003082;
+  --3-text: white;
+  --4: #001740;
+  --4-text: white;
+  --button-a: #FFC917;
+  --button-a-hover: #FFB519;
+  --button-b: #F0F1F2;
+  --button-b-hover: #EBEBEE;
+  --button-text: #003082;
+  --form-border: #C4C5CB;
+  font-size: 16px;
+  font-family: 'NS Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+  background-color: var(--1);
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: var(--3);
+  padding: 15px;
+  z-index: 1;
+
+  > * {
+    margin: 0;
+    color: var(--3-text);
+  }
+}
+
+form {
+  width: clamp(40%, 600px, 100%);
+  margin-left:  auto;
+  margin-right: auto;
+  padding: 16px;
+  background-color: var(--2);
+  color: var(--2-text-a);
+  
+  .step:not(:has(> :checked:not([data-skip]))) > .step {
+    display: none;
+  }
+
+  > fieldset:first-of-type {
+    margin-top: 0;
+  }
+
+  fieldset > legend {
+    font-weight: bold;
+    color: var(--2-heading);
+  }
+
+  > fieldset > legend {
+    font-size: 1.6rem;
+  }
+  fieldset.question > legend {
+    font-size: 1.4rem;
+  }
+
+  fieldset {
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    border: 0;
+
+    > input + label {
+      cursor: pointer;
+      
+      &::after {
+        content: '';
+        display: block;
+      }
+    }
+    > input[type='radio']:has(+ label) {
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width:  100%;
+  height: 100%;
+  margin: 0;
+}

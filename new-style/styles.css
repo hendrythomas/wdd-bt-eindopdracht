@@ -68,7 +68,6 @@ form {
   h1, h2 {
     font-weight: bold;
     color: var(--2-heading);
-    margin-top: 1.4rem;
   }
   h1 {
     font-size: 1.6rem;
@@ -80,6 +79,8 @@ form {
   .step {
     display: flex;
     flex-direction: column;
+    margin-top: 0.7rem;
+    /* TODO: add margin before nested steps */
     margin-bottom: 0.7rem;
     
     /* hide steps when skipped or nothing checked */

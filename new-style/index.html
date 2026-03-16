@@ -13,59 +13,216 @@
       <h2>Dit is een schoolopdracht</h2>
     </nav>
     <form>
-      <fieldset>
-        <legend>Gegevens van de overledene</legend>
-        <fieldset class="question">
-          <legend>Vraag 1</legend>
-          <fieldset class="step">
-            <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
-            <input type="radio" name="had-partner" data-skip placeholder id="f-had-partner-n">
-            <label for="f-had-partner-n">
-              Nee
-            </label>
-            <input type="radio" name="had-partner" placeholder id="f-had-partner-y">
-            <label for="f-had-partner-y">
-              Ja
-            </label>
-            <input type="radio" name="had-partner" placeholder id="f-had-partner-m">
-            <label for="f-had-partner-m">
-              Misschien
-            </label>
-            <fieldset class="step">
-              <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
-              <input type="radio" name="had-partners" data-skip placeholder id="f-had-partners-n">
-              <label for="f-had-partners-n">
-                Nee
-              </label>
-              <input type="radio" name="had-partners" placeholder id="f-had-partners-y">
-              <label for="f-had-partners-y">
-                Ja
-              </label>
-              <input type="radio" name="had-partners" placeholder id="f-had-partners-m">
-              <label for="f-had-partners-m">
-                Misschien
-              </label>
-              <fieldset class="step"><legend>Gutentag</legend></fieldset>
-            </fieldset>
-            <fieldset class="step">
-              <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
-              <input type="radio" name="had-partnerss" data-skip placeholder id="f-had-partnerss-n">
-              <label for="f-had-partnerss-n">
-                Nee
-              </label>
-              <input type="radio" name="had-partnerss" placeholder id="f-had-partnerss-y">
-              <label for="f-had-partnerss-y">
-                Ja
-              </label>
-              <input type="radio" name="had-partnerss" placeholder id="f-had-partnerss-m">
-              <label for="f-had-partnerss-m">
-                Misschien
-              </label>
-              <fieldset class="step"><legend>Hallo</legend></fieldset>
-            </fieldset>
-          </fieldset>
+      <h1>Gegevens van de overledene</h1>
+      <h2>Vraag 1</h2>
+      <label class="step">
+        <span>Voorletter(s):</span>
+        <input type="text" name="voorletters" maxlength="11" placeholder required>
+      </label>
+      <label class="step">
+        <span>Tussenvoegsel(s):</span>
+        <input type="text" name="tussenvoegsels" placeholder>
+      </label>
+      <label class="step">
+        <span>Achternaam:</span>
+        <input type="text" name="achternaam" placeholder>
+      </label>
+      <label class="step">
+        <span>Bsn overledene:</span>
+        <input type="tel" name="bsn" minlength="8" maxlength="9" pattern="[0-9.]+" placeholder required>
+      </label>
+      <label class="step">
+        <span>Overlijdensdatum:</span>
+        <input type="date" name="datum-overlijden" max="2026-01-20" data-max-today="" placeholder required>
+      </label>
+      <h2>Vraag 2</h2>
+      <fieldset class="step">
+        <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+        <label>
+          <input type="radio" name="had-partner" data-skip placeholder>
+          Nee
+        </label>
+        <label>
+          <input type="radio" name="had-partner" placeholder>
+          Ja
+        </label>
+        <fieldset class="step">
+          <legend>
+            Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?
+          </legend>
+          <label>
+            <input type="radio" name="had-partnerschapsvoorwaarden" placeholder>
+            Nee
+          </label>
+          <label>
+            <input type="radio" name="had-partnerschapsvoorwaarden" placeholder>
+            Ja
+          </label>
+        </fieldset>
+        <fieldset class="step">
+          <legend>
+            Hadden de overledene en diens partner een finaal verrekenbeding?
+          </legend>
+          <label>
+            <input type="radio" name="had-verrekenbeding" placeholder>
+            Nee
+          </label>
+          <label>
+            <input type="radio" name="had-verrekenbeding" placeholder>
+            Ja
+          </label>
         </fieldset>
       </fieldset>
+      
+      <fieldset class="step">
+        <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+        <label>
+          <input type="radio" name="had-partner" data-skip>
+          Nee
+        </label>
+        <label>
+          <input type="radio" name="had-partner">
+          Ja
+        </label>
+        <fieldset class="step">
+          <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+          <label>
+            <input type="radio" name="had-partners" data-skip>
+            Nee
+          </label>
+          <label>
+            <input type="radio" name="had-partners">
+            Ja
+          </label>
+        </fieldset>
+        <fieldset class="step">
+          <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+          <label>
+            <input type="radio" name="had-partnerss">
+            Nee
+          </label>
+          <label>
+            <input type="radio" name="had-partnerss">
+            Ja
+          </label>
+        </fieldset>
+      </fieldset>
+
+      <label class="step">
+        Datum huwelijkse of partnerschapsvoorwaarden:
+        <input type="date" name="datum-partnerschapsvoorwaarden" placeholder>
+      </label>
+      <fieldset class="step">
+        <legend>Had de overledene kinderen?</legend>
+        <label>
+          <input type="radio" name="had-kinderen" data-skip placeholder>
+          Nee
+        </label>
+        <label>
+          <input type="radio" name="had-kinderen" placeholder>
+          Ja
+        </label>
+        <fieldset class="step">
+          <legend>
+            Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
+          </legend>
+          <label>
+            <input type="radio" name="had-overleden-kind" placeholder>
+            Nee
+          </label>
+          <label>
+            <input type="radio" name="had-overleden-kind" placeholder>
+            Ja
+          </label>
+        </fieldset>
+        <fieldset class="step">
+          <legend>Had dit overleden kind zelf kinderen?</legend>
+          <label>
+            <input type="radio" name="overleden-kind-had-kind" placeholder>
+            Nee
+          </label>
+          <label>
+            <input type="radio" name="overleden-kind-had-kind" placeholder>
+            Ja
+          </label>
+        </fieldset>
+      </fieldset>
+      <fieldset class="step">
+        <legend>Had de overledene een testament?</legend>
+        <label>
+          <input type="radio" name="had-testament" data-skip placeholder>
+          Nee
+        </label>
+        <label>
+          <input type="radio" name="had-testament" placeholder>
+          Ja
+        </label>
+        <label class="step">
+          Protocolnummer notaris:
+          <input type="tel" name="notaris-protocolnummer" maxlength="6" pattern="[0-9.]+" placeholder required>
+        </label>
+        <label class="step">
+          Voorletter(s) notaris:
+          <input type="text" name="notaris-voorletters" maxlength="11" placeholder required>
+        </label>
+        <label class="step">
+          Tussenvoegsel(s) notaris:
+          <input type="text" name="notaris-tussenvoegsels" placeholder>
+        </label>
+        <label class="step">
+          Achternaam notaris:
+          <input type="text" name="notaris-achternaam" placeholder>
+        </label>
+        <label class="step">
+          Bsn overledene:
+          <input type="tel" name="notaris-bsn" minlength="8" maxlength="9" pattern="[0-9.]+" placeholder required>
+        </label>
+        <label class="step">
+          Vestigingsplaats notaris:
+          <input type="text" name="notaris-vestigingsplaats" placeholder>
+        </label>
+        <label class="step">
+          Datum van het testament of van de laatste wijziging:
+          <input type="date" name="datum-testament" placeholder>
+        </label>
+      </fieldset>
+      <h1>Gegevens van de gemachtigde</h1>
+      <h2>Vraag 1 (Vul 1 van de 3 in: het bsn of RSIN van de gemachtigde, het beconnummer van de adviseur of het protocolnummer van de notaris.)</h2>
+      <label class="step">
+        Bsn/RSIN gemachtigde:
+        <input type="tel" name="gemachtigde-bsn" minlength="8" maxlength="9" pattern="[0-9.]+" placeholder>
+      </label>
+      <label class="step">
+        Beconnummer adviseur:
+        <input type="tel" name="gemachtigde-adviseur-beconnummer" maxlength="6" pattern="[0-9.]+" placeholder>
+      </label>
+      <label class="step">
+        Protocolnummer notaris:
+        <input type="tel" name="gemachtigde-notaris-protocolnummer" maxlength="6" pattern="[0-9.]+" placeholder>
+      </label>
+      <h2>Vraag 2</h2>
+      <label class="step">
+        Voorletter(s) gemachtigde:
+        <input type="text" name="gemachtigde-voorletters" placeholder required>
+      </label>
+      <label class="step">
+        Tussenvoegsel(s) gemachtigde:
+        <input type="text" name="gemachtigde-tussenvoegsels" placeholder>
+      </label>
+      <label class="step">
+        Achternaam gemachtigde:
+        <input type="text" name="gemachtigde-achternaam" placeholder>
+      </label>
+      <label class="step">
+        Naam instelling (bijvoorbeeld een notariskantoor:
+        <input type="text" name="gemachtigde-instelling" placeholder>
+      </label>
+
+      <div class="buttons">
+        <!-- TODO: use button with correct type? -->
+        <button type="button">Tussentijds opslaan</button>
+        <button type="submit">Verzenden</button>
+      </div>
     </form>
   </body>
 </html>

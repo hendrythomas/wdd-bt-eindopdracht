@@ -10,7 +10,7 @@ function clearInput() {
   for (const textElem of textElems) {
     textElem.value = '';
   }
-  const radioElems = document.querySelectorAll('input');
+  const radioElems = document.querySelectorAll('input[type="radio"]');
   for (const radioElem of radioElems) {
     radioElem.checked = false;
   }

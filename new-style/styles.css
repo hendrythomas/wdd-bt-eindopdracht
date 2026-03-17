@@ -82,10 +82,16 @@ form {
     margin-top: 0.7rem;
     /* TODO: add margin before nested steps */
     margin-bottom: 0.7rem;
+    opacity: 1;
+    transition: opacity 1s;
     
     /* hide steps when skipped or nothing checked */
     &:not(:has(> label > :checked:not([data-skip]))) > .step {
       display: none;
+    }
+
+    @starting-style {
+      opacity: 0;
     }
 
     > :first-of-type {
@@ -95,6 +101,15 @@ form {
 
   label, input[type='radio'] {
     cursor: pointer;
+  }
+
+  /* required */
+  label:has([required]) > span,
+  fieldset:has([required]) > legend {
+    &::after {
+      content: '*';
+      color: red;
+    }
   }
   
   input:where(

@@ -29,7 +29,7 @@ body {
   --button-text: #003082;
   --form-border: #C4C5CB;
   font-size: 16px;
-  font-family: 'NS Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-family: 'NS Sans', 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
   background-color: var(--1);
 }
 

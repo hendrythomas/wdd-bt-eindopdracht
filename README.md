@@ -96,7 +96,7 @@ nieuwe css voor nieuwe html
 
 ## Ontwerp
 
-Omdat dit een simpele website is heb ik een literature study gedaan. Ik heb de formulieren van NS (web) en de overheid vergeleken. https://ictresearchmethods.nl/library/literature-study/
+Omdat dit een simpele website is heb ik een literature study gedaan. Ik heb de formulieren van NS (web) en de overheid vergeleken.
 
 De volgende eigenschappen zijn uniek voor papieren formulieren:
 *  Kortere zinnen, afkortingen
@@ -119,6 +119,14 @@ Het thema van het formulier moet gebaseerd zijn op NS. Ik hiervoor de website ge
 niet voor dit ...
 
 wel voor dit ...
+
+*  datum
+   *  max today
+*  bsn
+   *  min 8 max 9
+*  
+
+`*` styling
 
 ### Patterns
 
@@ -197,14 +205,13 @@ Dit is het uiteindelijke ontwerp geworden.
 
 ##### JavaScript
 
-###### Scrolling
-
-javascript voor target optioneel, met <a>
-
 ###### Required
 
-required toggle javascript
-default optional (progressive enhancement)
+Voor progressive enhancement begint alles als optioneel. JavaScript zorgt ervoor dat de juiste stappen verplicht worden. Hiervoor heb ik `data` gebruikt:
+
+1. Stappen zonder [data-required] required = false
+2. Stappen met [data-required] required = true
+3. Stappen die worden overgeslagen required = false
 
 ###### Clear input
 
@@ -212,9 +219,15 @@ default optional (progressive enhancement)
 
 javascript
 
+### Accessibility
+
+debugger
+
+
 ## Bronnen
 
 *  HTML:
 *  CSS:
 *  JavaScript: 
-*  Theme: https://www.nsinternational.com/nl/treintickets-v3/#/search/NLASC/NLSHL/20260401?pax=A&inboundDate=20260401
+*  Theme: NS International https://www.nsinternational.com/nl/treintickets-v3/#/search/NLASC/NLSHL/20260401?pax=A&inboundDate=20260401
+*  Research methods: ICT Research Methods https://ictresearchmethods.nl/library/literature-study/

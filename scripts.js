@@ -1,8 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+  clearInput();
   listenSkippers();
   updateRequired();
   setMaxToday();
 });
+
+function clearInput() {
+  const textElems = document.querySelectorAll('input:where([type="text"],[type="email"],[type="number"],[type="tel"],[type="date"])');
+  for (const textElem of textElems) {
+    textElem.value = '';
+  }
+  const radioElems = document.querySelectorAll('input');
+  for (const radioElem of radioElems) {
+    radioElem.checked = false;
+  }
+}
 
 function setMaxToday() {
   const dateElems = document.querySelectorAll('[data-max-today]');
@@ -26,28 +38,26 @@ function setMaxToday() {
 function listenSkippers() {
   const skipperElems = document.querySelectorAll('input[type="radio"]');
   for (const skipperElem of skipperElems) {
-    console.log(skipperElem);
     skipperElem.addEventListener('change', updateRequired);
   }
 }
 
 function updateRequired() {
-  const visibleElems = document.querySelectorAll('.step input');
-  const requiredVisibleElems = document.querySelectorAll('.step input[data-required]');
-  const skippedElems = document.querySelectorAll('.step:not(:has(> label > :checked:not([data-skip]))) > .step input');
-
   // make everything without [data-required] optional
+  const visibleElems = document.querySelectorAll('.step input');
   for (const visibleElem of visibleElems) {
     visibleElem.required = false;
   }
+
   // make everything with [data-required] required
+  const requiredVisibleElems = document.querySelectorAll('.step input[data-required]');
   for (const requiredVisibleElem of requiredVisibleElems) {
     requiredVisibleElem.required = true;
   }
+  
   // make everything that's hidden optional
+  const skippedElems = document.querySelectorAll('.step:not(:has(> label > :checked:not([data-skip]))) > .step input');
   for (const skippedElem of skippedElems) {
     skippedElem.required = false;
   }
 }
-
-//TODO: pick one input

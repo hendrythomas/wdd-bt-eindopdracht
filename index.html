@@ -38,13 +38,13 @@
       </label>
       <label class="step">
         <span>Overlijdensdatum:</span>
-        <input type="date" name="datum-overlijden" data-max-today placeholder data-required>
+        <input type="date" name="datum-overlijden" placeholder data-max-today data-required>
       </label>
       <h2>Vraag 2</h2>
       <fieldset class="step">
         <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
         <label>
-          <input type="radio" name="had-partner" data-skip>
+          <input type="radio" name="had-partner" data-skip data-required>
           Nee
         </label>
         <label>
@@ -54,34 +54,34 @@
         <fieldset class="step">
           <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte? </legend>
           <label>
-            <input type="radio" name="had-partners" data-skip>
+            <input type="radio" name="had-partnerschapsvoorwaarden" data-required>
             Nee
           </label>
           <label>
-            <input type="radio" name="had-partners">
+            <input type="radio" name="had-partnerschapsvoorwaarden">
             Ja
           </label>
         </fieldset>
         <fieldset class="step">
           <legend>Hadden de overledene en diens partner een finaal verrekenbeding?</legend>
           <label>
-            <input type="radio" name="had-partnerss">
+            <input type="radio" name="had-verrekenbeding" data-required>
             Nee
           </label>
           <label>
-            <input type="radio" name="had-partnerss">
+            <input type="radio" name="had-verrekenbeding">
             Ja
           </label>
         </fieldset>
+        <label class="step">
+          <span>Datum huwelijkse of partnerschapsvoorwaarden:</span>
+          <input type="date" name="datum-partnerschapsvoorwaarden" placeholder data-max-today data-required>
+        </label>
       </fieldset>
-      <label class="step">
-        <span>Datum huwelijkse of partnerschapsvoorwaarden:</span>
-        <input type="date" name="datum-partnerschapsvoorwaarden" data-max-today placeholder>
-      </label>
       <fieldset class="step">
         <legend>Had de overledene kinderen?</legend>
         <label>
-          <input type="radio" name="had-kinderen" data-skip placeholder>
+          <input type="radio" name="had-kinderen" placeholder data-skip data-required>
           Nee
         </label>
         <label>
@@ -93,7 +93,7 @@
             Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?
           </legend>
           <label>
-            <input type="radio" name="had-overleden-kind" placeholder>
+            <input type="radio" name="had-overleden-kind" placeholder data-required>
             Nee
           </label>
           <label>
@@ -104,11 +104,11 @@
         <fieldset class="step">
           <legend>Had dit overleden kind zelf kinderen?</legend>
           <label>
-            <input type="radio" name="overleden-kind-had-kind" placeholder>
+            <input type="radio" name="overleden-kind-had-kind" placeholder data-required>
             Nee
           </label>
           <label>
-            <input type="radio" name="overleden-kind-had-kind" placeholder>
+            <input type="radio" name="overleden-kind-had-kind" placeholder data-required>
             Ja
           </label>
         </fieldset>
@@ -116,7 +116,7 @@
       <fieldset class="step">
         <legend>Had de overledene een testament?</legend>
         <label>
-          <input type="radio" name="had-testament" data-skip placeholder>
+          <input type="radio" name="had-testament" placeholder data-skip data-required>
           Nee
         </label>
         <label>
@@ -149,7 +149,7 @@
         </label>
         <label class="step">
           <span>Datum van het testament of van de laatste wijziging:</span>
-          <input type="date" name="datum-testament" data-max-today placeholder>
+          <input type="date" name="datum-testament" placeholder data-max-today data-required>
         </label>
       </fieldset>
       <h1>Gegevens van de gemachtigde</h1>

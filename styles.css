@@ -105,8 +105,8 @@ form {
   }
 
   /* required */
-  label.step:has(> [required]) > span,
-  fieldset.step:has(:not(.step) > [required]) > legend {
+  label.step:has(> [data-required]) > span,
+  fieldset.step:has(:not(.step) > [data-required]) > legend {
     &::after {
       content: '*';
       color: red;

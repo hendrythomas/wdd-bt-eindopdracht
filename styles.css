@@ -65,6 +65,7 @@ form {
   }
 
   fieldset > legend,
+  label.step,
   h1, h2 {
     font-weight: bold;
     color: var(--2-heading);

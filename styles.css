@@ -84,7 +84,7 @@ form {
     /* TODO: add margin before nested steps */
     margin-bottom: 0.6rem;
     opacity: 1;
-    transition: opacity 1s;
+    transition: opacity 0.5s ease-out;
     
     /* hide steps when skipped or nothing checked */
     &:not(:has(> label > :checked:not([data-skip]))) > .step {
@@ -105,8 +105,8 @@ form {
   }
 
   /* required */
-  label:has([required]) > span,
-  fieldset:has([required]) > legend {
+  label.step:has(> [required]) > span,
+  fieldset.step:has(:not(.step) > [required]) > legend {
     &::after {
       content: '*';
       color: red;

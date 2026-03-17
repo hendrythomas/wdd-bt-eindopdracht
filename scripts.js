@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   listenSkippers();
+  updateRequired();
   setMaxToday();
 });
 
@@ -23,30 +24,30 @@ function setMaxToday() {
 }
 
 function listenSkippers() {
-  const skipperElems = document.querySelectorAll('[data-skip]');
+  const skipperElems = document.querySelectorAll('input[type="radio"]');
   for (const skipperElem of skipperElems) {
-    skipperElem.addEventListener('change', skipToElem);
-  }
-  const unskipperElems = document.querySelectorAll('[data-unskip]');
-  for (const unskipperElem of unskipperElems) {
-    unskipperElem.addEventListener('change', unskipToElem);
+    console.log(skipperElem);
+    skipperElem.addEventListener('change', updateRequired);
   }
 }
 
-function skipToElem(e) {
-  const skipperElem = e.target;
-  const anchor = skipperElem.dataset.skip;
-  if (anchor === undefined) return;
+function updateRequired() {
+  const visibleElems = document.querySelectorAll('.step input');
+  const requiredVisibleElems = document.querySelectorAll('.step input[data-required]');
+  const skippedElems = document.querySelectorAll('.step:not(:has(> label > :checked:not([data-skip]))) > .step input');
 
-  location.hash = anchor;
-
-  // set required
-}
-
-function unskipToElem(e) {
-  location.hash = '/';
-
-  // set required
+  // make everything without [data-required] optional
+  for (const visibleElem of visibleElems) {
+    visibleElem.required = false;
+  }
+  // make everything with [data-required] required
+  for (const requiredVisibleElem of requiredVisibleElems) {
+    requiredVisibleElem.required = true;
+  }
+  // make everything that's hidden optional
+  for (const skippedElem of skippedElems) {
+    skippedElem.required = false;
+  }
 }
 
 //TODO: pick one input

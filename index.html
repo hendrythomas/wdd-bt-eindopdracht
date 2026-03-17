@@ -10,6 +10,9 @@
   </head>
   <body>
     <nav>
+      <!-- <svg width="50" height="50" class="yellow" preserveAspectRatio="slice">
+        <path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M0,2l16,27.7L32,2H0z M8.7,7h14.7L16,19.7L8.7,7z"/>
+      </svg> -->
       <h2>Dit is een schoolopdracht</h2>
     </nav>
     <form>
@@ -18,7 +21,7 @@
       <p>Stappen met een sterretje (<span style="color: red">*</span>) zijn verplicht</p>
       <label class="step">
         <span>Voorletter(s):</span>
-        <input type="text" name="voorletters" maxlength="11" placeholder required>
+        <input type="text" name="voorletters" maxlength="11" placeholder data-required>
       </label>
       <label class="step">
         <span>Tussenvoegsel(s):</span>
@@ -30,11 +33,11 @@
       </label>
       <label class="step">
         <span>Bsn overledene:</span>
-        <input type="tel" name="bsn" minlength="8" maxlength="9" pattern="[0-9.]+" placeholder required>
+        <input type="tel" name="bsn" minlength="8" maxlength="9" pattern="[0-9.]+" placeholder data-required>
       </label>
       <label class="step">
         <span>Overlijdensdatum:</span>
-        <input type="date" name="datum-overlijden" data-max-today placeholder required>
+        <input type="date" name="datum-overlijden" data-max-today placeholder data-required>
       </label>
       <h2>Vraag 2</h2>
       <fieldset class="step">
@@ -121,11 +124,11 @@
         </label>
         <label class="step">
           <span>Protocolnummer notaris:</span>
-          <input type="tel" name="notaris-protocolnummer" maxlength="6" pattern="[0-9.]+" placeholder required>
+          <input type="tel" name="notaris-protocolnummer" maxlength="6" pattern="[0-9.]+" placeholder data-required>
         </label>
         <label class="step">
           <span>Voorletter(s) notaris:</span>
-          <input type="text" name="notaris-voorletters" maxlength="11" placeholder required>
+          <input type="text" name="notaris-voorletters" maxlength="11" placeholder data-required>
         </label>
         <label class="step">
           <span>Tussenvoegsel(s) notaris:</span>
@@ -137,7 +140,7 @@
         </label>
         <label class="step">
           <span>Bsn overledene:</span>
-          <input type="tel" name="notaris-bsn" minlength="8" maxlength="9" pattern="[0-9.]+" placeholder required>
+          <input type="tel" name="notaris-bsn" minlength="8" maxlength="9" pattern="[0-9.]+" placeholder data-required>
         </label>
         <label class="step">
           <span>Vestigingsplaats notaris:</span>
@@ -165,7 +168,7 @@
       <h2>Vraag 2</h2>
       <label class="step">
         <span>Voorletter(s) gemachtigde:</span>
-        <input type="text" name="gemachtigde-voorletters" placeholder required>
+        <input type="text" name="gemachtigde-voorletters" placeholder data-required>
       </label>
       <label class="step">
         <span>Tussenvoegsel(s) gemachtigde:</span>

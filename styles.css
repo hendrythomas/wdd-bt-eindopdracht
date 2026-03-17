@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  --1: #EBF5FF;
+  --1: #e6e6e8;
   --2: white;
   --2-heading: #003082;
   --2-text-a: #252528;
@@ -39,58 +39,77 @@ nav {
   background-color: var(--3);
   padding: 15px;
   z-index: 1;
-}
-nav > * {
-  margin: 0;
-  color: var(--3-text);
+
+  > * {
+    margin: 0;
+    color: var(--3-text);
+  }
 }
 
 form {
   width: clamp(40%, 600px, 100%);
   margin-left:  auto;
   margin-right: auto;
-  padding: 16px;
+  padding: 1rem;
   background-color: var(--2);
   color: var(--2-text-a);
+
+  > :first-child {
+    margin-top: 0;
+  }
 
   fieldset {
     padding: 0;
     margin: 0;
     border: 0;
   }
-  fieldset.question {
-    counter-reset: item;
 
-    fieldset:not(.label) > * {
-      padding-top:    8px;
-      padding-bottom: 8px;
+  fieldset > legend,
+  h1, h2 {
+    font-weight: bold;
+    color: var(--2-heading);
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
 
-      &:not(legend) {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-      }
-    }
-
-    > fieldset {
-      counter-increment: item;
-      --i: counter(item);
+  .step {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+    /* TODO: add margin before nested steps */
+    margin-bottom: 0.6rem;
+    opacity: 1;
+    transition: opacity 1s;
     
-      > legend::before {
-        content: 'Vraag ' var(--i);
-      }
+    /* hide steps when skipped or nothing checked */
+    &:not(:has(> label > :checked:not([data-skip]))) > .step {
+      display: none;
     }
 
-    legend,
-    label:not(:has(> input[type='radio'])) {
-      color: var(--2-heading);
-      font-weight: bold;
+    @starting-style {
+      opacity: 0;
     }
-    > legend {
-      font-size: 24px;
+
+    > :first-of-type {
+      margin-top: 0.6rem;
     }
-    > fieldset > legend {
-      font-size: 20px;
+  }
+
+  label, input[type='radio'] {
+    cursor: pointer;
+  }
+
+  /* required */
+  label:has([required]) > span,
+  fieldset:has([required]) > legend {
+    &::after {
+      content: '*';
+      color: red;
     }
   }
   
@@ -108,12 +127,21 @@ form {
     color: var(--2-text-a);
     font-size: 1em;
     font-family: inherit;
+
+    /* validation */
+    &:user-invalid:not(:focus) {
+      /* after blur if not typing */
+      border: 1px solid red;
+      background-color: #FF000010;
+    }
+    &:valid:not(:placeholder-shown) {
+      /* always if has text */
+      border: 1px solid lime;
+      background-color: #00FF0010;
+    }
   }
 
-  label, input[type='radio'] {
-    cursor: pointer;
-  }
-
+  
   .buttons {
     display: flex;
     gap: 16px;
@@ -144,65 +172,6 @@ form {
 
       &:hover:not(:active) {
         background-color: var(--button-a-hover);
-      }
-    }
-  }
-
-  input:where(
-    [type='text'],
-    [type='email'],
-    [type='number'],
-    [type='tel']
-  ):user-invalid:not(:focus) {
-    /* after blur if not typing */
-    border: 1px solid red;
-    background-color: #FF000010;
-  }
-  
-  input:where(
-    [type='text'],
-    [type='email'],
-    [type='number'],
-    [type='tel']
-  ):valid:not(:placeholder-shown) {
-    /* always if has text */
-    border: 1px solid lime;
-    background-color: #00FF0010;
-  }
-
-  /* show first/next input */
-  .question > fieldset > * {
-    opacity: 0.5;
-    filter: saturate(0);
-    user-select: none;
-    pointer-events: none;
-  }
-  .question:where(
-    :first-of-type,
-    :not(:has(:where(
-      input:not(:where(:user-valid, :user-invalid)),
-      input[data-skip]:checked
-    ))) + .question
-  ) {
-    > fieldset:where(
-      :first-of-type,
-      :not(:has(:where(
-        input:not(:where(:user-valid, :user-invalid)),
-        input[data-skip]:checked
-      ))) + fieldset
-    ) {
-      > :where(
-        :first-of-type,
-        :has(input:where(
-          :user-valid,
-          :user-invalid
-        )):not(:has([data-skip]:checked)) + *,
-        :target, * target
-      ) {
-        opacity: 1;
-        filter: none;
-        user-select: auto;
-        pointer-events: all;
       }
     }
   }

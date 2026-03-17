@@ -46,13 +46,13 @@ Volgende keer ga ik verder met validation en de styling.
 
 Ik heb geleerd en gelezen over regex.
 <br>
-Vandaag heb ik de pattern stappen overslaan geïmplementeerd met JavaScript. Ik heb dit gedocumenteerd onder [patterns](#Patterns).
+Vandaag heb ik de pattern stappen overslaan geïmplementeerd met JavaScript. Ik heb dit gedocumenteerd onder [patterns](#JavaScript).
 <br>
 Er is een probleem met de selector die ik morgen op wil lossen.
 
 ### 3/3/26
 
-Ik heb tips gekregen van de docent en klasgenoten. Ik heb vandaag geprobeerd de stappen overslaan pattern te implementeren met alleen CSS. Ik heb hiervoor `:valid`/`:invalid` gebruikt. Ik heb dit gedocumenteerd onder [patterns](#Patterns).
+Ik heb tips gekregen van de docent en klasgenoten. Ik heb vandaag geprobeerd de stappen overslaan pattern te implementeren met alleen CSS. Ik heb hiervoor `:valid`/`:invalid` gebruikt. Ik heb dit gedocumenteerd onder [patterns](#Methode-1).
 <br>
 Ik heb voor een BT opdracht meer geleerd over `input` en `label`.
 <br>
@@ -142,7 +142,6 @@ In CSS zou dit er zo uitzien:
 &:not(:has(:target)) > .question:has([data-skip]:checked) ~ *,
 > .question:has([data-skip]:checked) ~ .question:has(~ .question:has(:target)),
 &:not(:has([data-skip]:checked)) > .question:has(~ .question:has(:target)) {
-    background-color: red !important;
 
     &:not(:has(:target)) > fieldset:has([data-skip]:checked) ~ *,
     > fieldset:has([data-skip]:checked) ~ fieldset:has(~ fieldset:has(:target)),
@@ -158,7 +157,7 @@ In CSS zou dit er zo uitzien:
 }
 ```
 
-Helaas is :has() nesting nog niet ondersteund door browsers.
+Helaas is :has() nesting nog niet ondersteund door browsers, dus moet ik een andere oplossing bedenken.
 
 ##### Methode 2
 

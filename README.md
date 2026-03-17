@@ -1,4 +1,5 @@
-> [!CAUTION] Dit is een schoolopdracht
+> [!IMPORTANT]
+> Dit is een schoolopdracht
 
 # Eindopdracht Browser Technology
 

@@ -247,7 +247,8 @@ form {
     font-weight: bold;
     cursor: pointer;
 
-    &:hover:not(:active) {
+    &:hover:not(:active),
+    &:focus-visible {
       background-color: var(--button-b-hover);
     }
   }
@@ -255,7 +256,8 @@ form {
   > [type='submit'] {
     background-color: var(--button-a);
 
-    &:hover:not(:active) {
+    &:hover:not(:active),
+    &:focus-visible {
       background-color: var(--button-a-hover);
     }
   }

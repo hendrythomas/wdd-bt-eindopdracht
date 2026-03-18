@@ -86,6 +86,30 @@ body {
   padding-top:    70px;
   padding-bottom: 70px;
 }
+  
+.info {
+  position: fixed;
+  right:  50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+  width:  clamp(30%, 400px, 90%);
+  height: 400px;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: var(--1);
+  color: var(--2-text-a);
+  z-index: 1;
+  transition: all 0.2s;
+
+  &:not(:has(:target)) {
+    display: none;
+  }
+
+  @starting-style {
+    opacity: 0;
+    margin-bottom: 10px;
+  }
+}
 
 form {
   width: clamp(40%, 600px, 100%);
@@ -152,6 +176,24 @@ form {
     &::after {
       content: '*';
       color: red;
+    }
+  }
+
+  label {
+    position: relative;
+  }
+  
+  /* info */
+  label > a {
+    position: absolute;
+    right: 0;
+    color: transparent;
+    pointer-events: none;
+
+    &::after {
+      content: ' 🛈';
+      color: var(--2-text-b);
+      pointer-events: all;
     }
   }
   

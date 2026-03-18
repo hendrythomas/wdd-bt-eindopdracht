@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   clearInput();
-  listenSkippers();
+  listenInput();
   updateRequired();
   setMaxToday();
 });
@@ -35,29 +35,40 @@ function setMaxToday() {
   }
 }
 
-function listenSkippers() {
-  const skipperElems = document.querySelectorAll('input[type="radio"]');
-  for (const skipperElem of skipperElems) {
-    skipperElem.addEventListener('change', updateRequired);
+function listenInput() {
+  const inputElems = document.querySelectorAll('input');
+  for (const inputElem of inputElems) {
+    inputElem.addEventListener('change', updateRequired);
+    inputElem.addEventListener('change', updateProgress);
   }
 }
 
 function updateRequired() {
   // make everything without [data-required] optional
-  const visibleElems = document.querySelectorAll('.step input');
-  for (const visibleElem of visibleElems) {
-    visibleElem.required = false;
+  const inputElems = document.querySelectorAll('.step input');
+  for (const inputElem of inputElems) {
+    inputElem.required = false;
   }
 
   // make everything with [data-required] required
-  const requiredVisibleElems = document.querySelectorAll('.step input[data-required]');
-  for (const requiredVisibleElem of requiredVisibleElems) {
-    requiredVisibleElem.required = true;
+  const requiredInputElems = document.querySelectorAll('.step input[data-required]');
+  for (const requiredInputElem of requiredInputElems) {
+    requiredInputElem.required = true;
   }
   
   // make everything that's hidden optional
-  const skippedElems = document.querySelectorAll('.step:not(:has(> label > :checked:not([data-skip]))) > .step input');
-  for (const skippedElem of skippedElems) {
-    skippedElem.required = false;
+  const skippedInputElems = document.querySelectorAll('.step:not(:has(> label > :checked:not([data-skip]))) > .step input');
+  for (const skippedInputElem of skippedInputElems) {
+    skippedInputElem.required = false;
   }
+}
+
+function updateProgress() {
+  const progressElem = document.querySelector('[data-insert="progress"]');
+  if (progressElem === null) return;
+
+  const requiredSteps = document.querySelectorAll('.step:has([required])');
+  progressElem.max = requiredSteps.length;
+  const doneRequiredInputElems = document.querySelectorAll('.step:has([required]:valid)');
+  progressElem.value = doneRequiredInputElems.length;
 }

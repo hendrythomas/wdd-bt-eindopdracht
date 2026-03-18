@@ -78,6 +78,10 @@ body {
   color: var(--2-text-a);
 }
 
+.logo {
+  color: var(--button-a);
+}
+
 .main {
   padding-top:    70px;
   padding-bottom: 70px;

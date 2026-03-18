@@ -203,9 +203,7 @@ Dit kan dan worden gestyled met simpele CSS:
 
 Dit is het uiteindelijke ontwerp geworden.
 
-##### JavaScript
-
-###### Required
+##### Required
 
 Voor progressive enhancement begint alles als optioneel. JavaScript zorgt ervoor dat de juiste stappen verplicht worden. Hiervoor heb ik `data` gebruikt:
 
@@ -213,15 +211,11 @@ Voor progressive enhancement begint alles als optioneel. JavaScript zorgt ervoor
 2. Stappen met [data-required] required = true
 3. Stappen die worden overgeslagen required = false
 
-###### Clear input
+#### Info boxes
 
-#### één van de drie invullen
+### Toegankelijkheid
 
-javascript
-
-### Accessibility
-
-debugger
+Voor toegankelijkheid heb ik tijdens de ontwikkeling de Developer Tools screen reader en Accessibility tab gebruikt.
 
 
 ## Bronnen

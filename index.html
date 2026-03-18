@@ -10,13 +10,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
-    <nav>
+    <div class="top-bar">
       <!-- <svg width="50" height="50" class="yellow" preserveAspectRatio="slice">
         <path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M0,2l16,27.7L32,2H0z M8.7,7h14.7L16,19.7L8.7,7z"/>
       </svg> -->
       <h2>Dit is een schoolopdracht</h2>
-    </nav>
-    <form>
+    </div>
+    <div class="bottom-bar">
+      <label>
+        Progress:
+        <progress max="100" value="0" data-insert="progress"></progress>
+      </label>
+    </div>
+    <form class="main">
       <h1>Gegevens van de overledene</h1>
       <h2>Vraag 1</h2>
       <p>Stappen met een sterretje (<span style="color: red">*</span>) zijn verplicht</p>
@@ -153,20 +159,11 @@
         </label>
       </fieldset>
       <h1>Gegevens van de gemachtigde</h1>
-      <h2>Vraag 1 (Vul 1 van de 3 in: het bsn of RSIN van de gemachtigde, het beconnummer van de adviseur of het protocolnummer van de notaris.)</h2>
+      <h2>Vraag 1</h2>
       <label class="step">
         <span>Bsn/RSIN gemachtigde:</span>
-        <input type="tel" name="gemachtigde-bsn" minlength="8" maxlength="9" pattern="[0-9.]+" placeholder>
+        <input type="tel" name="gemachtigde-bsn" minlength="8" maxlength="9" pattern="[0-9.]+" placeholder data-required>
       </label>
-      <label class="step">
-        <span>Beconnummer adviseur:</span>
-        <input type="tel" name="gemachtigde-adviseur-beconnummer" maxlength="6" pattern="[0-9.]+" placeholder>
-      </label>
-      <label class="step">
-        <span>Protocolnummer notaris:</span>
-        <input type="tel" name="gemachtigde-notaris-protocolnummer" maxlength="6" pattern="[0-9.]+" placeholder>
-      </label>
-      <h2>Vraag 2</h2>
       <label class="step">
         <span>Voorletter(s) gemachtigde:</span>
         <input type="text" name="gemachtigde-voorletters" placeholder data-required>

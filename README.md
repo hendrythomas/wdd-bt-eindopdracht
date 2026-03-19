@@ -92,7 +92,19 @@ Feedback:
 ### 16/3/26
 
 html nesting en aparte labels
+<br>
 nieuwe css voor nieuwe html
+<br>
+validity javascript
+
+### 17/3/26
+
+pattern 2 progressive disclosure
+<br>
+required `*` styling
+<br>
+morgen werken aan info popup pattern
+
 
 ## Ontwerp
 
@@ -112,7 +124,7 @@ De rede dat ik nummers en titels gebruik in het formulier is omdat deze zorgen v
 
 ### Thema
 
-Het thema van het formulier moet gebaseerd zijn op NS. Ik hiervoor de website gebruikt van NS International, omdat ik dit serieuze thema meer vond passen bij het formulier.
+Het thema van het formulier moet gebaseerd zijn op NS. Ik hiervoor de website gebruikt van NS International [(bron)](#Bronnen), omdat ik dit serieuze thema meer vond passen bij het formulier.
 
 ### Validatie
 
@@ -205,23 +217,31 @@ Dit is het uiteindelijke ontwerp geworden.
 
 ##### Required
 
-Voor progressive enhancement begint alles als optioneel. JavaScript zorgt ervoor dat de juiste stappen verplicht worden. Hiervoor heb ik `data` gebruikt:
+Voor progressive enhancement beginnen alle stappen als optioneel. JavaScript zorgt ervoor dat de juiste stappen verplicht worden. Hiervoor heb ik `data` gebruikt:
 
 1. Stappen zonder [data-required] required = false
 2. Stappen met [data-required] required = true
 3. Stappen die worden overgeslagen required = false
 
-#### Info boxes
+#### Pop-ups
+
+anchor links
 
 ### Toegankelijkheid
 
 Voor toegankelijkheid heb ik tijdens de ontwikkeling de Developer Tools screen reader en Accessibility tab gebruikt.
+<br>
+Alle elemente nhebben een hover styling. Als ik tijd over heb wil ik onderzoeken welke aria labels ik kan gebruiken.
 
 
 ## Bronnen
 
-*  HTML:
+*  HTML: MDN https://developer.mozilla.org/en-US/docs/Web/HTML
 *  CSS:
-*  JavaScript: 
-*  Theme: NS International https://www.nsinternational.com/nl/treintickets-v3/#/search/NLASC/NLSHL/20260401?pax=A&inboundDate=20260401
+   *  MDN https://developer.mozilla.org/en-US/docs/Web/CSS
+   *  W3Schools https://www.w3schools.com/css/default.asp
+*  JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 *  Research methods: ICT Research Methods https://ictresearchmethods.nl/library/literature-study/
+*  Thema: NS International https://www.nsinternational.com/nl/treintickets-v3/#/search/NLASC/NLSHL/20260401?pax=A&inboundDate=20260401
+*  Logo: Minor Web Design & Development https://everythingweb.org
+*  Geen AI :D

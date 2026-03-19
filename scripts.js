@@ -53,7 +53,7 @@ function showValidity(formElem) {
     }
 
     // add new message
-    const messageElem = document.createElement('div');
+    const messageElem = document.createElement('p');
     messageElem.classList.add('validity');
     if (invalidInputElem.validity.valueMissing) {
       messageElem.textContent = 'Vul deze vraag in';

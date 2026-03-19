@@ -34,6 +34,16 @@ Vandaag heb ik een gezamelijke review gedaan. Ik ga aan de volgende dingen werke
 *  `<fieldset>` met `counter` gebruiken in plaats van `<dl>`
 *  Nadenken over het ontwerp
 
+### Week 1
+
+Deze week heb ik geleerd over:
+*  form conventions & best practices
+*  project planning
+   *  Eerst mogelijkheden onderzoeken, dan ontwerpen
+   *  Eerst ontwerpen, dan responsiveness implementeren
+*  input types
+*  html validation
+
 ### 27/2/26
 
 Vandaag heb ik geleerd over `:valid`/`:invalid`. Ik heb dit getest met tijdelijke styling.
@@ -62,6 +72,16 @@ Morgen ga ik verder met de pattern.
 
 Ik meerdere CSS oplossingen geprobeerd. Uiteindelijk heb ik mijn originele JavaScript hergebruikt in CSS. Nu werkt de pattern in CSS, maar er is nog steeds hetzelfde probleem dat niet alles geselecteerd wordt.
 
+### Week 2
+
+Deze week heb ik geleerd over:
+*  validation css
+*  html pattern
+*  css selectors
+   *  `:has()`
+   *  `:not()`
+*  input/label
+
 ### 9/3/26
 
 Ik heb verder gewerkt aan de CSS voor de pattern.
@@ -85,9 +105,15 @@ Feedback:
 *  Required tekst bovenaan, could have met javascript (niet content want niet vertaalbaar)
 *  Mag html tags zoals span gebruiken in formulier
 *  White space
-*  Position fixed voor positie fixed
+*  Position fixed voor opslaan button
 
-### Week 3?
+### Week 3
+
+Ik heb deze week meer geleerd over:
+*  CSS selectors
+   *  `::after`
+*  Progressive disclosure
+*  Form best practices
 
 ### 16/3/26
 
@@ -105,6 +131,60 @@ required `*` styling
 <br>
 morgen werken aan info popup pattern
 
+
+use radio for question 2 of 3 idk
+write about css?
+check paper notes
+geel voor divider en button
+
+regex research
+regex builder
+roboto?
+document ns inspiration source
+datalist?
+
+
+should have
+* [x] skipping
+  * [x] toggle required
+  * [x] reset input
+* [x] progressive disclosure
+* [x] validatie
+* [x] info popups (? design)
+  * [ ] documenteren
+* [x] mooiere ns styling
+  * [ ] buttons
+  * [x] dark mode
+  * [x] logo
+* [ ] validatie styling
+  * [ ] onderzoek
+  * [ ] text on submit (javascript (input validity state, blur?))
+  * [x] sterretje
+    * [x] legenda
+* [ ] print style
+* [ ] basis accessibility
+  * [x] documenteren
+  * [x] tab focus
+  * [x] tab order
+  * [x] debugger warnings
+  * [ ] screen reader (aria labels)
+    * [ ] onderzoek
+* [ ] landcodes
+
+could have
+* [ ] aantal vragen/stappen over
+  * [ ] documenteren
+  * [ ] navigeren naar stap
+* [ ] mock server side validation
+* [ ] tussentijds opslaan
+* [ ] autocomplete
+* [ ] advanced accessibility: aria-describedby, etc.
+  * [ ] documenteren
+  * [ ] reduced motion
+    * [ ] onderzoek
+* [ ] pagina's
+
+uh oh
 
 ## Ontwerp
 

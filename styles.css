@@ -179,12 +179,12 @@ form {
     }
   }
 
-  label {
+  .step {
     position: relative;
   }
   
   /* info */
-  label > a {
+  .step > a {
     position: absolute;
     right: 0;
     color: transparent;
@@ -223,6 +223,13 @@ form {
       border: 1px solid lime;
       background-color: #00FF0010;
     }
+  }
+
+  /* validity state */
+  .validity {
+    font-weight: normal;
+    color: red;
+    margin-bottom: 0.7rem;
   }
 }
 

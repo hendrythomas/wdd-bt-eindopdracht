@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  listenSubmit();
   clearInput();
   listenInput();
   updateRequired();
@@ -10,9 +11,57 @@ function clearInput() {
   for (const textElem of textElems) {
     textElem.value = '';
   }
+
   const radioElems = document.querySelectorAll('input[type="radio"]');
   for (const radioElem of radioElems) {
     radioElem.checked = false;
+  }
+}
+
+function listenSubmit() {
+  const formElem = document.querySelector('form');
+  if (formElem === null) return;
+  
+  const submitElem = formElem.querySelector('[type="submit"]');
+  if (submitElem === null) return;
+  
+  submitElem.addEventListener('click', (e) => {
+    showValidity(formElem);
+  });
+}
+
+function listenInput() {
+  const inputElems = document.querySelectorAll('input');
+  for (const inputElem of inputElems) {
+    inputElem.addEventListener('change', updateRequired);
+    inputElem.addEventListener('change', updateProgress);
+  }
+}
+
+function showValidity(formElem) {
+  const invalidInputElems = formElem.querySelectorAll('input:invalid');
+  for (const invalidInputElem of invalidInputElems) {
+    if (invalidInputElem.validity === undefined) continue;
+    
+    // delete previous messages
+    const stepElem = invalidInputElem.closest('.step');
+    if (stepElem === null) continue;
+
+    const oldMessageElems = stepElem.querySelectorAll('.validity');
+    for (const oldMessageElem of oldMessageElems) {
+      oldMessageElem.remove();
+    }
+
+    // add new message
+    const messageElem = document.createElement('div');
+    messageElem.classList.add('validity');
+    if (invalidInputElem.validity.valueMissing) {
+      messageElem.textContent = 'Vul deze vraag in';
+    }
+    else if (invalidInputElem.validity.patternMismatch) {
+      messageElem.textContent = 'Vul deze vraag op de juiste manier in'
+    }
+    stepElem.appendChild(messageElem);
   }
 }
 
@@ -32,14 +81,6 @@ function setMaxToday() {
 
   for (const dateElem of dateElems) {
     dateElem.setAttribute('max', today);
-  }
-}
-
-function listenInput() {
-  const inputElems = document.querySelectorAll('input');
-  for (const inputElem of inputElems) {
-    inputElem.addEventListener('change', updateRequired);
-    inputElem.addEventListener('change', updateProgress);
   }
 }
 
@@ -69,6 +110,6 @@ function updateProgress() {
 
   const requiredSteps = document.querySelectorAll('.step:has([required])');
   progressElem.max = requiredSteps.length;
-  const doneRequiredInputElems = document.querySelectorAll('.step:has([required]:valid)');
-  progressElem.value = doneRequiredInputElems.length;
+  const validRequiredSteps = document.querySelectorAll('.step:has([required]:valid)');
+  progressElem.value = validRequiredSteps.length;
 }

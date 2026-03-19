@@ -60,8 +60,14 @@ function showValidity(formElem) {
     if (inputElem.validity.valueMissing) {
       messageElem.textContent = 'Vul deze vraag in';
     }
+    else if (inputElem.validity.tooShort) {
+      messageElem.textContent = 'Deze gegevens zijn te kort. Vul de juiste gegevens in'
+    }
+    else if (inputElem.validity.tooLong) {
+      messageElem.textContent = 'Deze gegevens zijn te lang. Vul de juiste gegevens in';
+    }
     else if (inputElem.validity.patternMismatch) {
-      messageElem.textContent = 'Vul deze vraag op de juiste manier in'
+      messageElem.textContent = 'Vul de juiste gegevens in';
     }
     stepElem.appendChild(messageElem);
   }

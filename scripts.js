@@ -39,12 +39,12 @@ function listenInput() {
 }
 
 function showValidity(formElem) {
-  const invalidInputElems = formElem.querySelectorAll('input:invalid');
-  for (const invalidInputElem of invalidInputElems) {
-    if (invalidInputElem.validity === undefined) continue;
+  const inputElems = formElem.querySelectorAll('input');
+  for (const inputElem of inputElems) {
+    if (inputElem.validity === undefined) continue;
     
     // delete previous messages
-    const stepElem = invalidInputElem.closest('.step');
+    const stepElem = inputElem.closest('.step');
     if (stepElem === null) continue;
 
     const oldMessageElems = stepElem.querySelectorAll('.validity');
@@ -53,12 +53,14 @@ function showValidity(formElem) {
     }
 
     // add new message
+    if (inputElem.checkValidity() === true) continue;
+
     const messageElem = document.createElement('p');
     messageElem.classList.add('validity');
-    if (invalidInputElem.validity.valueMissing) {
+    if (inputElem.validity.valueMissing) {
       messageElem.textContent = 'Vul deze vraag in';
     }
-    else if (invalidInputElem.validity.patternMismatch) {
+    else if (inputElem.validity.patternMismatch) {
       messageElem.textContent = 'Vul deze vraag op de juiste manier in'
     }
     stepElem.appendChild(messageElem);

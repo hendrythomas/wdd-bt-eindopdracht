@@ -131,61 +131,6 @@ required `*` styling
 <br>
 morgen werken aan info popup pattern
 
-
-use radio for question 2 of 3 idk
-write about css?
-check paper notes
-geel voor divider en button
-
-regex research
-regex builder
-roboto?
-document ns inspiration source
-datalist?
-
-
-should have
-* [x] skipping
-  * [x] toggle required
-  * [x] reset input
-* [x] progressive disclosure
-* [x] validatie
-* [x] info popups (? design)
-  * [ ] documenteren
-* [x] mooiere ns styling
-  * [ ] buttons
-  * [x] dark mode
-  * [x] logo
-* [ ] validatie styling
-  * [ ] onderzoek
-  * [ ] text on submit (javascript (input validity state, blur?))
-  * [x] sterretje
-    * [x] legenda
-* [ ] print style
-* [ ] basis accessibility
-  * [x] documenteren
-  * [x] tab focus
-  * [x] tab order
-  * [x] debugger warnings
-  * [ ] screen reader (aria labels)
-    * [ ] onderzoek
-* [ ] landcodes
-
-could have
-* [ ] aantal vragen/stappen over
-  * [ ] documenteren
-  * [ ] navigeren naar stap
-* [ ] mock server side validation
-* [ ] tussentijds opslaan
-* [ ] autocomplete
-* [ ] advanced accessibility: aria-describedby, etc.
-  * [ ] documenteren
-  * [ ] reduced motion
-    * [ ] onderzoek
-* [ ] pagina's
-
-uh oh
-
 ## Ontwerp
 
 Omdat dit een simpele website is heb ik een literature study gedaan. Ik heb de formulieren van NS (web) en de overheid vergeleken.
